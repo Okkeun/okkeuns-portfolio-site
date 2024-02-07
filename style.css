@@ -29,11 +29,13 @@ h1 {
 }
 
 nav {
-   
-    
     background: #333;
     color: #fff;
     padding: 20px 0;
+}
+.nav-element {
+    background-color: gray;
+    padding: 10px 5px 10px 5px;
 }
 
 footer {
