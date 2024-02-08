@@ -17,6 +17,29 @@ body {
     padding: 0 30px;
 }
 
+nav {
+    text-align: right;
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+
+}
+
+.nav-buttons-only {
+    margin-right: 2px;
+}
+.nav-element {
+    margin-left: auto;
+    background-color: gray;
+    padding: 10px 5px 10px 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -34,18 +57,14 @@ main {
 }
 
 .ideas-container {
+    padding-top: 50px;
+    
     text-align: center;
 }
+.ideas-container p {
+    border: 1px dashed white;
+}
 
-nav {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-}
-.nav-element {
-    background-color: gray;
-    padding: 10px 5px 10px 5px;
-}
 
 footer {
     background: #333;
@@ -59,16 +78,16 @@ footer p {
 }
 
 .desc-text {
-    float: left;
+    min-width: 350px;
 }
 
 .mascot-container {
-    float: right;
-    margin: 0 auto;
-    max-height: 200px;
+    padding: 0 0 0 30px;
+    margin: auto;
+    height: 200px;
 }
 .mascot-container img {
-    margin: 0 auto;
-    height: 100%;
+    max-height: 100%;
+    height: auto;
 }
 
