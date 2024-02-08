@@ -3,15 +3,16 @@
 * {
     display: border-box;
     font-family: 'Roboto', sans-serif;
+    text-decoration: none;
 }
 
 a {
-    color: bisque;
+    color: rgb(44, 5, 36);
 }
 
 body {
-    background-color: #080808;
-    color: #fffdfd;
+    background-color: #ffffff;
+    color: rgb(44, 5, 36);
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 30px;
@@ -22,10 +23,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    background: #333;
+    /*background: #333;*/
+    /*background: linear-gradient(to right,#0ff1c0, #a9fff1, #cdd6e2, #ffffff);*/
+    /*border: 1px ridge rgb(165, 31, 255, 0.2);*/
     color: #fff;
     padding: 20px 0;
-
+    
 }
 
 .nav-buttons-only {
@@ -33,7 +36,8 @@ nav {
 }
 .nav-element {
     margin-left: auto;
-    background-color: gray;
+    color: white;
+    background-color: rgb(7, 182, 130);
     padding: 10px 5px 10px 5px;
 }
 
@@ -48,6 +52,8 @@ header {
     align-items: center;
     margin: 0px 25px 0px 25px;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(7, 182, 130);
+    /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
 }
 
 .hiya-message-container p {
@@ -62,6 +68,9 @@ main {
     max-width: 600px;
     margin: 20px auto;
     padding: 0 30px;
+    /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
+    background-color: rgba(240, 221, 240, 0.251);
+    
 }
 
 .main-container {
@@ -75,13 +84,13 @@ main {
     text-align: center;
 }
 .ideas-container ol {
-    border: 1px dashed white;
+    border: 3px dashed rgb(165, 31, 255);
 }
 
 
 footer {
-    background: #333;
-    color: #fff;
+    background: #f7f7f7;
+    border-radius: 2%;
     text-align: center;
     padding: 10px 0;
     margin: auto;
@@ -103,5 +112,6 @@ footer p {
 .mascot-container img {
     max-height: 100%;
     height: auto;
+    filter: drop-shadow(0px 0px 5px rgb(159, 1, 173));
 }
 
