@@ -21,12 +21,20 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    display: flex;
+main {
     max-width: 600px;
     min-height: 1300px;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ideas-container {
+    text-align: center;
 }
 
 nav {
@@ -56,9 +64,11 @@ footer p {
 
 .mascot-container {
     float: right;
+    margin: 0 auto;
     max-height: 200px;
 }
 .mascot-container img {
+    margin: 0 auto;
     height: 100%;
 }
 
