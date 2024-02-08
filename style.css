@@ -23,6 +23,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     text-align: right;
+    width: 70%;
+    margin: auto;
     /*background: #333;*/
     /*background: linear-gradient(to right,#0ff1c0, #a9fff1, #cdd6e2, #ffffff);*/
     /*border: 1px ridge rgb(165, 31, 255, 0.2);*/
