@@ -65,7 +65,7 @@ main {
     
     text-align: center;
 }
-.ideas-container p {
+.ideas-container ol {
     border: 1px dashed white;
 }
 
