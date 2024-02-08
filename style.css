@@ -54,8 +54,11 @@ footer p {
     float: left;
 }
 
-.mascot {
+.mascot-container {
     float: right;
-    width: 250px;
+    max-height: 200px;
+}
+.mascot-container img {
+    height: 100%;
 }
 
