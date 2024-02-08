@@ -60,7 +60,6 @@ header {
 
 main {
     max-width: 600px;
-    min-height: 1300px;
     margin: 20px auto;
     padding: 0 30px;
 }
@@ -84,7 +83,8 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 30px 0;
+    padding: 10px 0;
+    margin: auto;
 }
 
 footer p {
