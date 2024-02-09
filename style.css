@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+@keyframes up-down {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0);}  
+}
+
+@font-face {
+    font-family: Ferrum;
+    src: url(fonts/Ferrum-wy99.otf) format("opentype"); 
+  }
+
 :root {
     --background-color: #202022;
     --main-container-color: #3b3d42ec;
@@ -33,7 +44,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    width: 70%;
+    width: 100%;
     margin: auto;
     /*background: #333;*/
     /*background: linear-gradient(to right,#0ff1c0, #a9fff1, #cdd6e2, #ffffff);*/
@@ -56,6 +67,7 @@ nav {
 
 header {
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
 }
@@ -66,6 +78,7 @@ header {
     margin: 0px 25px 0px 0px;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--colored-text-color);
+    
     /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
 }
 
@@ -74,32 +87,42 @@ header {
 }
 
 .hiya-message-container h1 {
+    font-family: "Ferrum", Arial, Helvetica, sans-serif;
+    text-transform: uppe;
+    font-size: 36px;
     margin: 0 auto 5px 0;
     filter:brightness(1.5);
-    filter: drop-shadow(0px 0px 5px rgb(7, 182, 130, 0.5) );
+    filter: drop-shadow(0px 0px 5px rgb(7, 182, 130, 0.2) );
 }
 
 main {
     width: 100%;
     margin: 20px auto;
-    padding: 0 30px;
+    padding: 0 0px;
     /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
-    
-    
 }
 
 .main-container {
     display: flex;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
+}
+
+.desc-text {
+    font-size: 28px;
+    min-width: 350px;
+    animation: up-down 8s infinite; 
 }
 
 .ideas-container {
-    padding-top: 50px;
-    
+    padding: 50px 0 10px 0;
+    margin: 0 0 0 0;
+
+    width: 100%;
     text-align: center;
 }
+
 .ideas-container ol {
-    border: 3px dashed var(--colored-shadow);
+    border: 3px dashed #ff02ff5e;
 }
 
 
@@ -117,18 +140,22 @@ footer p {
     margin: 0;
 }
 
-.desc-text {
-    min-width: 350px;
-}
+
+
+
 
 .mascot-container {
     padding: 0 0 0 30px;
     margin: auto;
     height: 200px;
+
 }
+
+
 .mascot-container img {
     max-height: 100%;
     height: auto;
     filter: drop-shadow(0px 0px 5px var(--colored-shadow));
+    animation: up-down 8s infinite;
 }
 
