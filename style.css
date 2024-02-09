@@ -177,14 +177,13 @@ footer p {
 #mascot-container img {
     max-height: 150%;
     height: auto;
-    filter: drop-shadow(0px 0px 5px var(--colored-shadow));
+    filter: drop-shadow(0px 0px 5px #4e1b91); 
     transition: filter 0.5s ease-in-out;
     animation: up-down 8s infinite;
 }
 
 #mascot-container img:hover {
-    filter: drop-shadow(0px 0px 5px #4e1b91); 
-    
+    filter: drop-shadow(0px 0px 5px var(--colored-shadow));
 }
 
 
