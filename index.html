@@ -18,8 +18,11 @@
             <!--<p>aka K.O.</p>!-->
         </div>
         <div class="nav-buttons-only">
-            <button><a class="nav-element" href="#">contact</a></button>
-            <button><a class="nav-element" href="#">projects</a></button>
+            <button class="nav-element collapsible"><a href="#">simple projects</a></button>
+                <div class="collapsible-content">
+                    <p>Lorem ipsum is here for now :v</p>
+                </div>
+            <button><a class="nav-element collapsible" href="#">contact</a></button>
         </div>
     </nav>
     <header>
@@ -40,8 +43,8 @@
 
         <section class="ideas-container" style="text-align: left;">
 
-        <button type="button" class="collapsible">Play Rock-Paper-Scissors (WiP)</button>
-        <div class="rock-paper-scissors-content">
+        <button type="button" class="nav-element collapsible">About the author</button>
+        <div class="collapsible-content">
             <p>Lorem ipsum is here for now :v</p>
         </div>
             <h3>Ideas for make this page even better! :D</h3>
@@ -59,4 +62,35 @@
     </footer>
 
 </body>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+
+    var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+        }
+</script>
 </html>

@@ -65,6 +65,22 @@ nav {
     border-image-slice: 1;
 }
 
+.active, .collapsible:hover {
+    background-color: #ccc;
+  }
+
+.collapsible-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible {
+    cursor: pointer;
+}
+
 header {
     display: flex;
     
