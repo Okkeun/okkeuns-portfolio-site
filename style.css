@@ -95,10 +95,11 @@ header {
 }
 
 main {
+    display: content-box;
     background-color: #655a663a;
-    width: 100%;
+    max-width: 100%;
     margin: 20px auto;
-    padding: 0 0px;
+    padding: 0 20px;
     
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.712));
 }
@@ -141,15 +142,15 @@ footer p {
     margin: 0;
 }
 
-.mascot-container {
+#mascot-container {
     padding: 0 0 0 30px;
     margin: auto;
     height: 200px;
 
 }
 
-.mascot-container img {
-    max-height: 100%;
+#mascot-container img {
+    max-height: 150%;
     height: auto;
     filter: drop-shadow(0px 0px 5px var(--colored-shadow));
     animation: up-down 8s infinite;
