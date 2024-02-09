@@ -18,15 +18,17 @@
             <!--<p>aka K.O.</p>!-->
         </div>
         <div class="nav-buttons-only">
-            <button class="nav-element collapsible"><a href="#">simple projects</a></button>
-                <div class="collapsible-content">
-                    <p>Lorem ipsum is here for now :v</p>
-                </div>
+
             <button><a class="nav-element collapsible" href="#">contact</a></button>
+            <button class="nav-element collapsible"><a href="#">simple projects</a></button>
         </div>
-    </nav>
-    <header>
         
+    </nav>
+
+    <header>
+        <div class="collapse-triggered-div">
+            <p>Lorem ipsum is here for now :v</p>
+        </div>
         
         
 
@@ -44,8 +46,8 @@
         <section class="ideas-container" style="text-align: left;">
 
         <button type="button" class="nav-element collapsible">About the author</button>
-        <div class="collapsible-content">
-            <p>Lorem ipsum is here for now :v</p>
+        <div class="">
+            <p></p>
         </div>
             <h3>Ideas for make this page even better! :D</h3>
             <ol>
@@ -69,7 +71,7 @@
     for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
-        var content = this.nextElementSibling;
+        var content = document.querySelector(".collapse-triggered-div");
         if (content.style.display === "block") {
         content.style.display = "none";
         } else {
@@ -84,7 +86,7 @@
         for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
-            var content = this.nextElementSibling;
+            var content = document.querySelector(".collapse-triggered-div");
             if (content.style.maxHeight){
             content.style.maxHeight = null;
             } else {

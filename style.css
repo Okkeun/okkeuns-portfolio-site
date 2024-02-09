@@ -55,6 +55,7 @@ nav {
 }
 
 .nav-buttons-only {
+    text-align: right;
     margin-right: 2px;
 }
 .nav-element {
@@ -69,7 +70,7 @@ nav {
     background-color: #ccc;
   }
 
-.collapsible-content {
+.collapse-triggered-div {
     padding: 0 18px;
     display: none;
     overflow: hidden;
@@ -134,7 +135,8 @@ main {
 button {
     all: initial;
     font-family: inherit; 
-    font-size: 100%;vertical-align: baseline;/* resetuje wyrównanie */
+    font-size: 100%;
+    vertical-align: baseline;/* resetuje wyrównanie */
     border: none;
 }
 
