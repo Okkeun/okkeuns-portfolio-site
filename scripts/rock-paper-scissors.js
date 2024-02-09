@@ -1,1 +1,1 @@
-console.log('Siema świecie!');
+console.log('Siema świsdsfecie!');

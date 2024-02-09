@@ -115,6 +115,13 @@ main {
     animation: up-down 8s infinite; 
 }
 
+button {
+    all: initial;
+    font-family: inherit; 
+    font-size: 100%;vertical-align: baseline;/* resetuje wyrównanie */
+    border: none;
+}
+
 .ideas-container {
     padding: 50px 0 10px 0;
     margin: 0 0 0 0;
@@ -153,6 +160,14 @@ footer p {
     max-height: 150%;
     height: auto;
     filter: drop-shadow(0px 0px 5px var(--colored-shadow));
+    transition: filter 0.5s ease-in-out;
     animation: up-down 8s infinite;
 }
+
+#mascot-container img:hover {
+    filter: drop-shadow(0px 0px 5px #4e1b91); 
+    
+}
+
+
 
