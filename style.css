@@ -18,7 +18,6 @@
     --colored-text-color: rgb(7, 182, 130);
     --colored-shadow: rgb(165, 31, 255);
     --standarised-shadow: drop-shadow(0px 0px 5px var(--colored-shadow)); 
-    --faded-border: border: 1px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.295), rgba(0, 0, 255, 0)); ;
 }
 
 * {
@@ -51,7 +50,8 @@ nav {
     /*border: 1px ridge rgb(165, 31, 255, 0.2);*/
     color: var(--text-color);
     padding: 20px 0;
-    
+    border-bottom: 2px solid; border-image: linear-gradient(90deg, rgba(0, 0, 255, 0), rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); 
+    border-image-slice: 1;
 }
 
 .nav-buttons-only {
@@ -61,7 +61,7 @@ nav {
     margin-left: auto;
     color: var(--text-color);
     padding: 10px 15px 10px 15px;
-    border: 1px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.295), rgba(0, 0, 255, 0)); 
+    border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); 
     border-image-slice: 1;
 }
 
@@ -89,17 +89,18 @@ header {
 .hiya-message-container h1 {
     color: white;
     font-family: "Ferrum", Arial, Helvetica, sans-serif;
-    text-transform: uppe;
     font-size: 46px;
     margin: 0 auto 5px 0;
     filter: drop-shadow(0px 0px 5px rgb(7, 182, 130, 1) );
 }
 
 main {
+    background-color: #655a663a;
     width: 100%;
     margin: 20px auto;
     padding: 0 0px;
-    /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
+    
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.712));
 }
 
 .main-container {
@@ -129,7 +130,7 @@ main {
 footer {
     /*background: var(--main-container-color);
     background: url(graphics/mountains-big.jpg); */
-    border: 1px solid; border-image: linear-gradient(to top, rgba(1, 255, 255, 0.295), rgba(0, 0, 255, 0)); 
+    border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); 
         border-image-slice: 1;
     text-align: center;
     padding: 10px 0;
