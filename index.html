@@ -16,8 +16,11 @@
             <h1 class="hiya-message">Hiya! I'm OKKEUN (★ω★)/</h1>
             <!--<p>aka K.O.</p>!-->
         </div>
+
         <div class="nav-buttons-only">
-            <button id="" class="nav-element"><a href="#">🦚 digital art & graphic design</a></button>
+            <button id="" class="nav-buttons-only">
+                <a href="#" class="nav-element">🦚 digital art & graphic design</a>
+            </button>
 
 
             <button id="button-SIMPLE-PROJECTS-collapsible" class="nav-buttons-only">
@@ -30,9 +33,9 @@
 
     <header>
         <div id="div-SIMPLE-PROJECTS-collapsible">
-            <div id="div-SIMPLE-PROJECTS-collapsible-content-inner">
+            <button id="div-SIMPLE-PROJECTS-collapsible-content-inner">
                 <p>Lorem ipsum is here for now :v</p>
-            </div>
+            </button>
         </div>
         
         
@@ -71,28 +74,6 @@
 
 </body>
 <script>
-    //select the collapsible button
-    var collapsibleButton = document.getElementById("button-SIMPLE-PROJECTS-collapsible");
-
-    //after click: 
-    //1. set display from none to block
-    //2. resize height of the div
-    /*collapsibleButton.addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-        if (content.style.maxHeight){
-            content.style.maxHeight = null;
-            } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
-
-    */
     document.getElementById("button-SIMPLE-PROJECTS-collapsible").addEventListener("click", function() {
             var collapsible = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
             collapsible.classList.toggle("active");

@@ -36,6 +36,21 @@ a {
     color: var(--text-color);
 }
 
+button {
+    all: initial;
+    font-family: inherit; 
+    font-size: 100%;
+    vertical-align: baseline;/* resetuje wyrównanie */
+    border: none;
+    color: var(--text-color);
+    margin: 15px 0 15px 0;
+    /*border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); */
+    border-image-slice: 1;
+}
+button:hover, .nav-element:hover {
+    color: var(--colored-text-color);
+}
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -43,8 +58,6 @@ body {
     margin: 0 auto;
     padding: 0 30px;
 }
-
-
 
 nav {
     display: flex;
@@ -81,12 +94,20 @@ nav {
 #div-SIMPLE-PROJECTS-collapsible {
     display: flex;
     justify-content: center;
+    align-items: center;
     display: none; /* Ukrywamy domyślnie */
 }
 
 #div-SIMPLE-PROJECTS-collapsible.active {
-    display: block; /* Pokazujemy po kliknięciu */
+    display: flex; /* Pokazujemy po kliknięciu */
+    padding-bottom: 0px;
     justify-content: center;
+    align-items: center;
+    max-height: 50px;
+}
+
+#div-SIMPLE-PROJECTS-collapsible.active p {
+    margin-bottom: 0;
 }
 
 #button-SIMPLE-PROJECTS-collapsible {
@@ -97,7 +118,6 @@ nav {
 
 header {
     display: flex;
-    
     justify-content: center;
     align-items: center;
 }
@@ -144,14 +164,6 @@ main {
     font-size: 28px;
     min-width: 350px;
     animation: up-down 8s infinite; 
-}
-
-button {
-    all: initial;
-    font-family: inherit; 
-    font-size: 100%;
-    vertical-align: baseline;/* resetuje wyrównanie */
-    border: none;
 }
 
 .ideas-container {
