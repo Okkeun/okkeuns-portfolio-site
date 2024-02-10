@@ -18,14 +18,14 @@
             <!--<p>aka K.O.</p>!-->
         </div>
         <div class="nav-buttons-only">
-            <button class="nav-element collapsible"><a href="#">🥮 simple projects</a></button>
-            <button class="nav-element collapsible"><a href="#">🦚 digital art & graphic design</a></button>
+            <button id="button-SIMPLE-PROJECTS-collapsible" class="nav-element"><a href="#">🥮 simple projects</a></button>
+            <button class="nav-element"><a href="#">🦚 digital art & graphic design</a></button>
         </div>
         
     </nav>
 
     <header>
-        <div class="collapse-triggered-div">
+        <div id="div-SIMPLE-PROJECTS-collapsible">
             <p>Lorem ipsum is here for now :v</p>
         </div>
         
@@ -44,7 +44,7 @@
 
         <section class="ideas-container" style="text-align: left;">
 
-        <button type="button" class="nav-element collapsible">About the author</button>
+        <button type="button" id="button-ABOUT-THE-AUTHOR-collapsible" class="nav-element">About the author</button>
         <div class="">
             <p></p>
         </div>
@@ -65,34 +65,28 @@
 
 </body>
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+    var coll = document.getElementById("button-SIMPLE-PROJECTS-collapsible");
 
-    for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
+    coll.addEventListener("click", function() {
         this.classList.toggle("active");
-        var content = document.querySelector(".collapse-triggered-div");
+        var content = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
         if (content.style.display === "block") {
         content.style.display = "none";
         } else {
         content.style.display = "block";
         }
     });
-    }
 
-    var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
+    var coll = document.getElementById("button-SIMPLE-PROJECTS-collapsible");
+        coll.addEventListener("click", function() {
             this.classList.toggle("active");
-            var content = document.querySelector(".collapse-triggered-div");
+            var content = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
             if (content.style.maxHeight){
             content.style.maxHeight = null;
             } else {
             content.style.maxHeight = content.scrollHeight + "px";
             }
         });
-        }
+
 </script>
 </html>

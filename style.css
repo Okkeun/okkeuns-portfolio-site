@@ -70,7 +70,7 @@ nav {
     background-color: #ccc;
   }
 
-.collapse-triggered-div {
+.collapse-triggered-div, #div-SIMPLE-PROJECTS-collapsible {
     padding: 0 18px;
     display: none;
     overflow: hidden;
@@ -78,7 +78,7 @@ nav {
     transition: max-height 0.2s ease-out;
 }
 
-.collapsible {
+#button-SIMPLE-PROJECTS-collapsible, #button-ABOUT-THE-AUTHOR-collapsible{
     cursor: pointer;
 }
 
