@@ -11,69 +11,86 @@
 </head>
 
 <body>
-    <nav>
-        <div class="hiya-message-container">
-            <h1 class="hiya-message">Hiya! I'm OKKEUN (★ω★)/</h1>
-            <!--<p>aka K.O.</p>!-->
-        </div>
-
-        <div class="nav-buttons-only">
-            <button id="" class="nav-buttons-only">
-                <a href="#" class="nav-element">🦚 digital art & graphic design</a>
-            </button>
+    <div id="popup">
+        <p>gejguiehgiuehguieg</p>
+        <a href="#" onclick="toggle()" style="color: black;" class="">🦚 digital art & graphic design</a>
+    </div>
 
 
-            <button id="button-SIMPLE-PROJECTS-collapsible" class="nav-buttons-only">
-                <a href="#" class="nav-element">🥮 simple projects</a>
-            </button>
 
-        </div>
-        
-    </nav>
-
-    <header>
-        <div id="div-SIMPLE-PROJECTS-collapsible">
-            <button id="div-SIMPLE-PROJECTS-collapsible-content-inner">
-                <p>Lorem ipsum is here for now :v</p>
-            </button>
-        </div>
-        
-        
-
-    </header>
-    
-    <main class="container">
-        <!-- główna treść -->
-        <section class="main-container">
-            <p class="desc-text">Okkeun is a hobbyist who loves digital art, graphic design, coding, and making many creative things!</p>
-            <div id="mascot-container">
-                <img src="graphics/mascot1.png" alt="fox character">
+    <div class="container" id="blur">
+        <nav>
+            <div class="hiya-message-container">
+                <h1 class="hiya-message">Hiya! I'm OKKEUN (★ω★)/</h1>
+                <!--<p>aka K.O.</p>!-->
             </div>
-        </section>
 
-        <section class="ideas-container" style="text-align: left;">
-
-        <button type="button" id="button-ABOUT-THE-AUTHOR-collapsible" class="nav-element">About the author</button>
-        <div class="">
-            <p></p>
-        </div>
-            <h3>Ideas for make this page even better! :D</h3>
-            <ol>
-                <li>I want the Leaf character to be interactive</li>
-                <li>Make Rock-Paper-Scissors game</li>
-                <li>Make this page responsive cuz now it's not very stretchy</li>
-            </ol>
-        </section>
-
-    </main>
+            <div class="nav-buttons-only">
+                <button id="" class="nav-buttons-only">
+                    <a href="#" class="nav-element">🦚 digital art & graphic design</a>
+                </button>
 
 
-    <footer>
-        <p>Copyright: Okkeun (2024)</p>
-    </footer>
+                <button id="button-SIMPLE-PROJECTS-collapsible" class="nav-buttons-only">
+                    <a href="#" class="nav-element">🥮 simple projects</a>
+                </button>
 
+            </div>
+            
+        </nav>
+
+        <header>
+            <div id="div-SIMPLE-PROJECTS-collapsible">
+                <button id="div-SIMPLE-PROJECTS-collapsible-content-inner" onclick="toggle()">
+                    <p>Lorem ipsum is here for now :v</p>
+                </button>
+            </div>
+            
+            
+
+        </header>
+        
+        <main class="container">
+            <!-- główna treść -->
+            <section class="main-container">
+                <p class="desc-text">Okkeun is a hobbyist who loves digital art, graphic design, coding, and making many creative things!</p>
+                <div id="mascot-container">
+                    <img src="graphics/mascot1.png" alt="fox character">
+                </div>
+            </section>
+
+            <section class="ideas-container" style="text-align: left;">
+
+            <button type="button" id="button-ABOUT-THE-AUTHOR-collapsible" class="nav-element">About the author</button>
+            <div class="">
+                <p></p>
+            </div>
+                <h3>Ideas for make this page even better! :D</h3>
+                <ol>
+                    <li>I want the Leaf character to be interactive</li>
+                    <li>Make Rock-Paper-Scissors game</li>
+                    <li>Make this page responsive cuz now it's not very stretchy</li>
+                </ol>
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>Copyright: Okkeun (2024)</p>
+        </footer>
+    </div>
 </body>
 <script>
+    //popup with app
+    function toggle() {
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active');
+    }
+
+    //collapsible button
     document.getElementById("button-SIMPLE-PROJECTS-collapsible").addEventListener("click", function() {
             var collapsible = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
             collapsible.classList.toggle("active");

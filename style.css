@@ -76,6 +76,39 @@ nav {
 }
 
 
+
+
+.container#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 50px;
+    background: white;
+    color: black;
+    opacity: 0;
+    z-index: 1;
+    visibility: hidden;
+    transition: 0.5s;
+}
+#popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+
+
+
+
 .nav-buttons-only {
     text-align: right;
     margin-right: 2px;
