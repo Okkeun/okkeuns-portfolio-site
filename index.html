@@ -65,28 +65,25 @@
 
 </body>
 <script>
-    var coll = document.getElementById("button-SIMPLE-PROJECTS-collapsible");
+    //select the collapsible button
+    var collapsibleButton = document.getElementById("button-SIMPLE-PROJECTS-collapsible");
 
-    coll.addEventListener("click", function() {
+    //after click: 
+    //1. set display from none to block
+    //2. resize height of the div
+    collapsibleButton.addEventListener("click", function() {
         this.classList.toggle("active");
         var content = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
         if (content.style.display === "block") {
-        content.style.display = "none";
+            content.style.display = "none";
         } else {
-        content.style.display = "block";
+            content.style.display = "block";
         }
-    });
-
-    var coll = document.getElementById("button-SIMPLE-PROJECTS-collapsible");
-        coll.addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
-            if (content.style.maxHeight){
+        if (content.style.maxHeight){
             content.style.maxHeight = null;
             } else {
             content.style.maxHeight = content.scrollHeight + "px";
             }
         });
-
 </script>
 </html>
