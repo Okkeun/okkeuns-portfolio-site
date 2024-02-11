@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Okakuen presents</title>
@@ -13,12 +13,12 @@
 <body>
     <div id="popup-rps-game">
         <p>Here will be game of the year of 2024, I swear to you :b</p>
-        <a href="#" onclick="toggleRpsGame()" style="color: black;" >🦚 digital art & graphic design</a>
+        <a href="#" onclick="toggleRpsGame()" style="color: black;" >🦚 nah take me back</a>
     </div>
-    <div id="popup-portfolio-warning">
+    <div id="popup-portfolio-warning" >
         <p>This button will redirect you to my portfolio site on Crevado</p>
-        <a href="#"" style="color: black;" >🦚 sure!</a><br>
-        <a href="#" onclick="togglePortfolio()" style="color: black;" >🦚 nah take me back</a>
+        <button id="take-me-to-my-art-portfolio"><a href="#" style="color: black;" >🦚 sure!</a></button><br>
+        <button><a href="#" onclick="togglePortfolio()" style="color: black;" >🦚 nah take me back</a></button>
     </div>
 
 
@@ -47,9 +47,7 @@
 
         <header>
             <div id="div-SIMPLE-PROJECTS-collapsible">
-                <button id="div-SIMPLE-PROJECTS-collapsible-content-inner" class="rock-paper-scissors-project-button" onclick="toggleRpsGame()">
-                    <p>Lorem ipsum is here for now :v</p>
-                </button>
+                <button id="div-SIMPLE-PROJECTS-collapsible-content-inner" class="rock-paper-scissors-project-button" onclick="toggleRpsGame()">Rock Paper Scissors (under construction)</button>
             </div>
             
             
@@ -88,6 +86,8 @@
     </div>
 </body>
 <script>
+    document.getElementById("take-me-to-my-art-portfolio").focus();
+
     //-POPUP rps-game with app
     function toggleRpsGame() {
         var blur = document.getElementById('blur');
@@ -96,7 +96,7 @@
         popup_rps_game.classList.toggle('active');
     }
 
-        //-POPUP rps-game with app
+    //-POPUP redirection to my portfolio site-game with app
     function togglePortfolio() {
         var blur = document.getElementById('blur');
         blur.classList.toggle('active');

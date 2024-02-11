@@ -79,7 +79,7 @@ nav {
 
 
 .container#blur.active {
-    filter: blur(20px);
+    filter: blur(10px);
     pointer-events: none;
     user-select: none;
 }
