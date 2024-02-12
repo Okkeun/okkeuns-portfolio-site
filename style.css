@@ -144,7 +144,7 @@ nav {
 
 /*sekcja collapsible */
 
-#div-SIMPLE-PROJECTS-collapsible, #div-ABOUT-THE-AUTHOR-collapsible {
+#div-SIMPLE-PROJECTS-collapsible, #div-ABOUT-THE-AUTHOR-collapsible{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,6 +157,10 @@ nav {
     justify-content: center;
     align-items: center;
     max-height: 50px;
+}
+
+#div-ABOUT-THE-AUTHOR-collapsible.active {
+    justify-content: flex-start;
 }
 
 #div-SIMPLE-PROJECTS-collapsible.active p {
@@ -271,7 +275,7 @@ footer p {
     right: 0;
     width: 100vw;
     height: 100vh;
-    opacity: 0.3;
+    opacity: 0.25;
     background-image: url("graphics/mountains-big.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
