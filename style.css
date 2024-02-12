@@ -144,14 +144,14 @@ nav {
 
 /*sekcja collapsible */
 
-#div-SIMPLE-PROJECTS-collapsible {
+#div-SIMPLE-PROJECTS-collapsible, #div-ABOUT-THE-AUTHOR-collapsible {
     display: flex;
     justify-content: center;
     align-items: center;
     display: none; /* Ukrywamy domyślnie */
 }
 
-#div-SIMPLE-PROJECTS-collapsible.active {
+#div-SIMPLE-PROJECTS-collapsible.active, #div-ABOUT-THE-AUTHOR-collapsible.active {
     display: flex; /* Pokazujemy po kliknięciu */
     padding-bottom: 0px;
     justify-content: center;
@@ -163,7 +163,7 @@ nav {
     margin-bottom: 0;
 }
 
-#button-SIMPLE-PROJECTS-collapsible {
+#button-SIMPLE-PROJECTS-collapsible, #button-ABOUT-THE-AUTHOR-collapsible {
     border: none;
     background: none;
     cursor: pointer;
@@ -277,6 +277,11 @@ footer p {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    z-index: -1;
+}
+
+.my-own-photo {
+    width: 50px;
 }
 
 

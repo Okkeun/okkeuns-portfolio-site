@@ -68,8 +68,9 @@
             <section class="ideas-container" style="text-align: left;">
 
             <button type="button" id="button-ABOUT-THE-AUTHOR-collapsible" class="nav-element">About the author</button>
-            <div class="">
-                <p></p>
+            <div id="div-ABOUT-THE-AUTHOR-collapsible">
+                <p>TUTAJ TROCHĘ O MNIE BĘDZIE</p>
+                <img class="my-own-photo" alt="It's a picture of me!" src="graphics/apprarently-its-me.jpg">
             </div>
                 <h3>Ideas for make this page even better! :D</h3>
                 <ol>
@@ -106,10 +107,16 @@
         popup_rps_game.classList.toggle('active');
     }
 
-    //collapsible button
+    //collapsible button SIMPLE-PROJECTS
     document.getElementById("button-SIMPLE-PROJECTS-collapsible").addEventListener("click", function() {
-            var collapsible = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
-            collapsible.classList.toggle("active");
+            var collapsible_SProjects_ = document.getElementById("div-SIMPLE-PROJECTS-collapsible");
+            collapsible_SProjects_.classList.toggle("active");
+        });
+
+    //collapsible button ABOUT THE AUTHOR
+    document.getElementById("button-ABOUT-THE-AUTHOR-collapsible").addEventListener("click", function() {
+            var collapsible_ATAuthor_ = document.getElementById("div-ABOUT-THE-AUTHOR-collapsible");
+            collapsible_ATAuthor_.classList.toggle("active");
         });
 </script>
 </html>
