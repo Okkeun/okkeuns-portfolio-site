@@ -173,9 +173,17 @@ nav {
     cursor: pointer;
 }
 
+#button-ABOUT-THE-AUTHOR-collapsible {
+    margin-left: auto;
+    color: var(--text-color);
+    padding: 10px 15px 10px 15px;
+    margin: 15px 0 15px 0;
+    border: 2px solid; border-color: rgba(1, 255, 255, 0.595)
+}
+
 header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
