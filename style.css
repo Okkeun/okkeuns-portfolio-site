@@ -161,10 +161,20 @@ nav {
 
 #div-ABOUT-THE-AUTHOR-collapsible.active {
     justify-content: flex-start;
-    border: 3px solid var(--colored-text-color);
+    border: 3px dashed var(--colored-text-color);
     overflow: hidden;
     max-height: none;
     height: 300px;
+    animation: dash 2s infinite linear; /* Używamy animacji z kluczowymi klatkami */
+}
+
+@keyframes dash {
+    0% {
+        background-position: 100% 0; /* Przesuwamy tło do końca */
+    }
+    100% {
+        background-position: 0% 0; /* Przesuwamy tło do końca */
+    }
 }
 
 #div-ABOUT-THE-AUTHOR-collapsible img {
