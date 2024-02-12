@@ -161,6 +161,15 @@ nav {
 
 #div-ABOUT-THE-AUTHOR-collapsible.active {
     justify-content: flex-start;
+    border: 3px solid var(--colored-text-color);
+    overflow: hidden;
+    max-height: none;
+    height: 300px;
+}
+
+#div-ABOUT-THE-AUTHOR-collapsible img {
+    height: auto;
+    max-height: 100%;
 }
 
 #div-SIMPLE-PROJECTS-collapsible.active p {
@@ -292,9 +301,7 @@ footer p {
     z-index: -1;
 }
 
-.my-own-photo {
-    width: 50px;
-}
+
 
 
 
