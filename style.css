@@ -210,14 +210,9 @@ main {
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.712));
 }
 
-.main-container {
-    display: flex;
-    /*justify-content: space-evenly;*/
-}
+
 
 .desc-text {
-    font-size: 28px;
-    min-width: 350px;
     animation: up-down 8s infinite; 
 }
 
@@ -248,20 +243,9 @@ footer p {
     margin: 0;
 }
 
-#mascot-container {
-    padding: 0 0 0 30px;
-    margin: auto;
-    height: 200px;
 
-}
 
-#mascot-container img {
-    max-height: 150%;
-    height: auto;
-    filter: drop-shadow(0px 0px 5px #4e1b91); 
-    transition: filter 0.5s ease-in-out;
-    animation: up-down 8s infinite;
-}
+
 
 #mascot-container img:hover {
     filter: drop-shadow(0px 0px 5px var(--colored-shadow));
@@ -345,7 +329,29 @@ footer p {
         background-size: cover;
         z-index: -1;
     }
+    .main-container {
+        display: flex;
+        
+        /*justify-content: space-evenly;*/
+    }
+    .desc-text {
+        font-size: 28px;
+        min-width: 350px;
+    }
+    #mascot-container {
+        flex-grow: 1;
+        padding: 0 0 0 30px;
+        margin: auto;
+        height: 200px;
     
+    }
+    #mascot-container img {
+        max-height: 150%;
+        height: 150%;
+        filter: drop-shadow(0px 0px 5px #4e1b91); 
+        transition: filter 0.5s ease-in-out;
+        animation: up-down 8s infinite;
+    }
 }
 
 @media all and (max-width: 800px) { /*small screens*/
@@ -413,7 +419,28 @@ footer p {
         border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 1), rgba(0, 234, 255, 0.455)); 
         border-image-slice: 1;
     }
-    
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        /*justify-content: space-evenly;*/
+    }
+    .desc-text {
+        text-align: center;
+        font-size: 24px;
+    }
+    #mascot-container {
+        padding: 0 0 0 0px;
+        margin: auto;
+        z-index: -2;
+    }
+    #mascot-container img {
+        max-height: 100%;
+        width: 100%;
+        max-width: 420px;
+        filter: drop-shadow(0px 0px 5px #4e1b91); 
+        transition: filter 0.5s ease-in-out;
+        animation: up-down 8s infinite;
+    }
 }
 
 
