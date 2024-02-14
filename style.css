@@ -54,15 +54,17 @@ button:hover, .nav-element:hover {
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 30px;
 }
 
 
 
 
+.container{
 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
 
 .container#blur.active {
     filter: blur(10px);
@@ -322,10 +324,35 @@ footer p {
         border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 1), rgba(0, 234, 255, 0.455)); 
         border-image-slice: 1;
     }
+    #cool-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.25;
+        background-image: url("graphics/mountains-big.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        z-index: -1;
+    }
     
 }
 
 @media all and (max-width: 800px) { /*small screens*/
+    #cool-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.25;
+        background-image: url("graphics/mountains-big.jpg");
+        z-index: -1;
+    }
+    
     nav {
         display: flex;
         justify-content: space-between;
