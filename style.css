@@ -55,12 +55,16 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
 
 
 
 
 .container{
-
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
@@ -350,6 +354,10 @@ footer p {
         height: 100vh;
         opacity: 0.25;
         background-image: url("graphics/mountains-big.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         z-index: -1;
     }
     
