@@ -302,6 +302,10 @@ footer p {
         /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
     }
 
+    .hiya-message-container p {
+        margin: 0 20px 0 20px;
+    }
+
     .nav-buttons-only {
         display: flex;
         align-items: center;
@@ -344,12 +348,16 @@ footer p {
     
         align-items: center;
         text-align: center;
-        margin: 0px 25px 0px 0px;
+        margin: 0px 0px 5px 0px;
         font-family: Arial, Helvetica, sans-serif;
         color: var(--colored-text-color);
         
         /*filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.712));*/
     }
+
+    /*.hiya-message-container p {
+        margin: 0 auto 0 auto;
+    }*/
     
     .nav-buttons-only {
         display: flex;
