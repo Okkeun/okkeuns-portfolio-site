@@ -131,6 +131,7 @@ main {
 
 #div-SIMPLE-PROJECTS-collapsible.active, #div-ABOUT-THE-AUTHOR-collapsible.active {
     display: flex; /* Pokazujemy po kliknięciu */
+    flex-wrap: wrap;
     padding-bottom: 0px;
     justify-content: center;
     align-items: center;
@@ -138,17 +139,18 @@ main {
 }
 
 #div-ABOUT-THE-AUTHOR-collapsible.active {
+    display: flex;
     justify-content: flex-start;
-    border: 3px dashed var(--colored-text-color);
+    flex-wrap: wrap;
     overflow: hidden;
     max-height: none;
-    height: 300px;
+    border: 3px dashed var(--colored-text-color);
+
     animation: dash 2s infinite linear; /* Używamy animacji z kluczowymi klatkami */
 }
 
 #div-ABOUT-THE-AUTHOR-collapsible img {
     height: auto;
-    max-height: 110%;
     border-radius: 5%;
 }
 
@@ -167,6 +169,7 @@ main {
 }
 
 #button-ABOUT-THE-AUTHOR-collapsible {
+    max-width: 150px;
     margin-left: auto;
     color: var(--text-color);
     padding: 10px 15px 10px 15px;
@@ -260,7 +263,31 @@ footer p {
     z-index: -1;
 }
 
-@media all and (min-width: 801px) { /*big screens*/
+.my-own-photo {
+    filter:grayscale();
+    max-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width: 601px) { /*big screens*/
     nav {
         display: flex;
         justify-content: space-between;
@@ -357,9 +384,32 @@ footer p {
         transition: filter 0.5s ease-in-out;
         animation: up-down 8s infinite;
     }
+
+    #button-ABOUT-THE-AUTHOR-collapsible { /*big screen*/
+        max-width: 150px;
+        margin: 15 0 15 auto;
+        padding: 10px 15px 10px 15px;
+        margin: 15px 0 15px 0;
+    }
+
+    #div-ABOUT-THE-AUTHOR-collapsible.active {
+        flex-direction: row;
+    }
+    .about-the-author-section { /*big*/
+        margin: 0 auto 0 0;
+    }
 }
 
-@media all and (max-width: 800px) { /*small screens*/
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 600px) { /*small screens*/
     #cool-background {
         position: fixed;
         top: 0;
@@ -459,6 +509,22 @@ footer p {
         filter: drop-shadow(0px 0px 5px #4e1b91); 
         transition: filter 0.5s ease-in-out;
         animation: up-down 8s infinite;
+    }
+
+    #button-ABOUT-THE-AUTHOR-collapsible {
+        max-width: 150px;
+        margin-left: auto;
+        padding: 10px 15px 10px 15px;
+        margin: 15px auto 15px auto;
+    }
+
+    #div-ABOUT-THE-AUTHOR-collapsible.active {
+        justify-content: center;
+        flex-direction: column;
+        width: 90vw;
+    }
+    .about-the-author-section { /*small*/
+        margin: 0 auto 0 auto;
     }
 }
 
