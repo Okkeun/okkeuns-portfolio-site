@@ -363,7 +363,7 @@ footer p {
         background-size: cover;
         z-index: -1;
     }
-    .main-container {
+    .main-container { /*big screen mode*/
         display: flex;
     }
     .desc-text {
@@ -387,9 +387,8 @@ footer p {
 
     #button-ABOUT-THE-AUTHOR-collapsible { /*big screen*/
         max-width: 150px;
-        margin: 15 0 15 auto;
         padding: 10px 15px 10px 15px;
-        margin: 15px 0 15px 0;
+        margin: 100px 0 15px 0;
     }
 
     #div-ABOUT-THE-AUTHOR-collapsible.active {
@@ -488,7 +487,7 @@ footer p {
         border-image-slice: 1;
     }
     
-    .main-container {
+    .main-container { /*small screen*/
         display: flex;
         flex-direction: column;
         /*justify-content: space-evenly;*/
