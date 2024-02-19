@@ -60,7 +60,9 @@ main {
     flex-direction: column;
 
 }
-
+button a {
+    white-space: nowrap;
+}
 
 
 
@@ -151,6 +153,7 @@ main {
     border: none;
     background: none;
     cursor: pointer;
+    padding: 10px 15px 10px 15px;
 }
 
 #button-ABOUT-THE-AUTHOR-collapsible {
@@ -327,7 +330,7 @@ footer p {
         align-items: center;
         flex-wrap: wrap;
         justify-content: flex-end;
-    
+        flex-grow: 1;
         text-align: right;
         margin-right: 2px;
     }
@@ -374,10 +377,8 @@ footer p {
         animation: up-down 8s infinite;
     }
 
-    #button-ABOUT-THE-AUTHOR-collapsible, #button-PORTFOLIO { /*big screen*/
-        min-width: 250px;
-        max-width: 250px;
-        padding: 10px 15px 10px 15px;
+    #button-PORTFOLIO, #button-SIMPLE-PROJECTS-collapsible, #button-ABOUT-THE-AUTHOR-collapsible { /*big screen*/
+        text-align: right;
         margin: 15px 0 15px 0;
     }
 
@@ -504,12 +505,10 @@ footer p {
         animation: up-down 8s infinite;
     }
 
-    #button-ABOUT-THE-AUTHOR-collapsible, #button-PORTFOLIO {
-        max-width: 280px;
-        min-width: 250px;
-        padding: 10px 15px 10px 15px;
-        margin: 15px auto 15px auto;
-        white-space: nowrap;
+    #button-PORTFOLIO, #button-SIMPLE-PROJECTS-collapsible, #button-ABOUT-THE-AUTHOR-collapsible {
+        
+        max-width: 300px;
+        margin: 5px auto 15px auto;
     }
 
     #div-ABOUT-THE-AUTHOR-collapsible.active {
