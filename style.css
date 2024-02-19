@@ -147,7 +147,7 @@ main {
     margin-bottom: 0;
 }
 
-#button-SIMPLE-PROJECTS-collapsible, #button-ABOUT-THE-AUTHOR-collapsible {
+#button-SIMPLE-PROJECTS-collapsible, #button-ABOUT-THE-AUTHOR-collapsible, #button-PORTFOLIO {
     border: none;
     background: none;
     cursor: pointer;
@@ -374,10 +374,11 @@ footer p {
         animation: up-down 8s infinite;
     }
 
-    #button-ABOUT-THE-AUTHOR-collapsible { /*big screen*/
-        max-width: 150px;
+    #button-ABOUT-THE-AUTHOR-collapsible, #button-PORTFOLIO { /*big screen*/
+        min-width: 250px;
+        max-width: 250px;
         padding: 10px 15px 10px 15px;
-        margin: 100px 0 15px 0;
+        margin: 15px 0 15px 0;
     }
 
     #div-ABOUT-THE-AUTHOR-collapsible.active {
@@ -503,11 +504,12 @@ footer p {
         animation: up-down 8s infinite;
     }
 
-    #button-ABOUT-THE-AUTHOR-collapsible {
-        max-width: 150px;
-        margin-left: auto;
+    #button-ABOUT-THE-AUTHOR-collapsible, #button-PORTFOLIO {
+        max-width: 280px;
+        min-width: 250px;
         padding: 10px 15px 10px 15px;
         margin: 15px auto 15px auto;
+        white-space: nowrap;
     }
 
     #div-ABOUT-THE-AUTHOR-collapsible.active {
