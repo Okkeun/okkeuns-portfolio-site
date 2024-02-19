@@ -73,31 +73,19 @@ main {
     user-select: none;
 }
 
-#popup-rps-game{
-    position: fixed;
+#popup-rps-game.active, #popup-portfolio-warning.active{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    padding: 50px;
-    background: white;
-    color: black;
-    opacity: 0;
-    z-index: 1;
-    visibility: hidden;
-    transition: 0.5s;
-}
-#popup-rps-game.active{
     visibility: visible;
     opacity: 1;
     transition: 0.5s;
 }
 
-#popup-portfolio-warning{
+#popup-portfolio-warning, #popup-rps-game{
     position: fixed;
     top: 40%;
     left: 50%;
-
     transform: translate(-50%, -40%);
     width: 600px;
     max-width: 50%;
@@ -107,14 +95,6 @@ main {
     opacity: 0;
     z-index: 1;
     visibility: hidden;
-    transition: 0.5s;
-}
-#popup-portfolio-warning.active{
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: visible;
-    opacity: 1;
     transition: 0.5s;
 }
 
