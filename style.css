@@ -288,6 +288,10 @@ footer p {
         border-image-slice: 1;
     }
 
+    header {
+        justify-content: flex-end;
+    }
+
     main {
         max-width: 1200px;
         margin: 0 auto;
@@ -423,6 +427,10 @@ footer p {
         padding: 20px 0;
         border-bottom: 2px solid; border-image: linear-gradient(90deg, rgba(0, 0, 255, 0), rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); 
         border-image-slice: 1;
+    }
+
+    header {
+        justify-content: center;
     }
 
     main {
