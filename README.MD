@@ -1,1 +1,1 @@
-Description of my future site, work in progress!co
+My personal site that contains basic information about me, plans to showcase some of my future JavaScript projects.
