@@ -214,7 +214,7 @@ main {
 }
 
 
-footer {
+.copyright {
     /*background: var(--main-container-color);
     background: url(graphics/mountains-big.jpg); */
     border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); 
@@ -224,7 +224,7 @@ footer {
     margin: auto;
 }
 
-footer p {
+.copyright p {
     margin: 0;
 }
 
