@@ -438,7 +438,7 @@ main {
         border-image-slice: 1;
     }
 
-    header {
+    header { /*small screens*/
         justify-content: center;
     }
 
