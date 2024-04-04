@@ -1,6 +1,7 @@
 console.log('Siema świsdsfecie!');
 
-
+let sampleText = "Hello World";
+let textBox = document.getElementById('RPS-textBox').innerText = sampleText;
 
 
 
