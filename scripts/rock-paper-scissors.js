@@ -2,6 +2,8 @@ console.log('Siema świsdsfecie!');
 
 
 
+
+
 /*
 ZAŁOŻENIA DLA NASZEJ APLIKACJI
 Pojawia się postać, którą możemy wyzwać na pojedynek czarodziejów. 
