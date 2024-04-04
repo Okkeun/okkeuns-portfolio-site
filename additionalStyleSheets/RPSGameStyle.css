@@ -1,0 +1,9 @@
+.RPSgame-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#RPS-button1 {
+    margin: auto;
+}
