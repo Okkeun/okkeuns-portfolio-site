@@ -75,6 +75,14 @@ button a {
     user-select: none;
 }
 
+
+.RPSgame-screen {
+    width: 400px;
+    height: 400px;
+    background-color: #d1c517;
+    margin: auto;
+}
+
 #popup-rps-game.active, #popup-portfolio-warning.active{
     top: 40%;
     left: 50%;
@@ -82,6 +90,14 @@ button a {
     visibility: visible;
     opacity: 1;
     transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-rps-game .normal-btn {
+    margin: auto;
 }
 
 #popup-portfolio-warning, #popup-rps-game{
@@ -255,6 +271,7 @@ main {
     filter:grayscale();
     max-height: 100px;
 }
+
 
 
 
