@@ -1,12 +1,18 @@
-
 const Phase = {
     ActivePhase: -1,
 
-    Intro: -1,
-    StandBy: 0,
-    Fight: 1,
+    Intro: -1, //greetings
+    EnemysAnimationTime: 0, //time for the animation to play, quickly moves to the next phase
+    Fight: 1, //you have 5 seconds to make a decision
     Resolve: 2
 }
+
+const Status = {
+    ofPlayersFigure: null,
+    ofEnemysFigure: null,
+}
+
+let counterFive = 5;
 
 let sampleText = "Aktualna faza: "+ Phase.ActivePhase;
 let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
@@ -16,20 +22,40 @@ function updateElement (HTMLElement, content) {
     HTMLElement.textContent = content;
 }
 
-//press button to start battle (phase Intro -> StandBy)
+//press button to start battle (phase Intro -> EnemysAnimationTime)
 function operatingButton () {
     document.getElementById('RPS-button1').addEventListener("click", function() {
         //change phase
-        Phase.ActivePhase = Phase.StandBy; 
+        Phase.ActivePhase = Phase.EnemysAnimationTime; 
         //update the textbox
         updateElement(document.getElementById('RPS-textBox'), "Aktualna faza: "+ Phase.ActivePhase);
         //hide the button
         toggleVisibility(document.getElementById('RPS-button1'), 'hide');
         //DEBUG - change the colour of the charBox
-        document.getElementById('RPS-character-box').style.backgroundColor = 'red';
-        //show RPS buttons
-        toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
+        document.getElementById('RPS-character-box').style.backgroundColor = 'green';
+        //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
+        var animationInterval = setInterval(enemysAnimationIntroCOUNTER, 2500);
+        timeToDecide();
+        toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
     });
+}
+
+//time for the animation (about 3 secs)
+function enemysAnimationIntroCOUNTER () {
+    counterFive -= 1;
+    document.getElementById('RPS-textBox2').textContent = "Animation of enemy: "+ counterFive;
+    console.log("Licznik: "+counterFive);
+    if (counterFive === 0){
+        console.log('Time to decide!');
+        toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
+        toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
+        document.getElementById('RPS-character-box').style.backgroundColor = 'red';
+    }
+}
+//FIGHT TIME! YOU HAVE 10 SECOUNDS TO DECIDE! 
+function timeToDecide() {
+        //show the buttons ...and hide the placeholder
+
 }
 
 
@@ -47,6 +73,8 @@ function toggleVisibility (element, showOrHide) {
 
 
 operatingButton();
+timeToDecide();
+
 
 //document.getElementById('RPS-textBox').textContent = "Aktualna faza:"+ Phase.ActivePhase
 
