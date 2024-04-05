@@ -1,8 +1,3 @@
-console.log('Siema świsdsfecie!');
-
-let sampleText = "Hello World";
-let textBox = document.getElementById('RPS-textBox').innerText = sampleText;
-let mainButton = document.getElementById('RPS-button1');
 
 const Phase = {
     ActivePhase: -1,
@@ -13,27 +8,43 @@ const Phase = {
     Resolve: 2
 }
 
-switch (Phase.ActivePhase) {
-    case -1:
-        toogleVisibility(mainButton, 'show');
-        break;
-    
+let sampleText = "Aktualna faza: "+ Phase.ActivePhase;
+let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
+let mainButton = document.getElementById('RPSbutton1');
+
+function updateElement (HTMLElement, content) {
+    HTMLElement.textContent = content;
 }
 
-function toogleVisibility (element, showOrHide) {
+function operatingButton () {
+    document.getElementById('RPSbutton1').addEventListener("click", function() {
+        console.log(Phase.ActivePhase);
+        //change phase
+        Phase.ActivePhase = Phase.StandBy; 
+        //update the textbox
+        updateElement(document.getElementById('RPS-textBox'), "Aktualna faza: "+ Phase.ActivePhase);
+        //hide the button
+        toggleVisibility(document.getElementById('RPSbutton1'), 'hide');
+    });
+}
+
+
+//pokazuje bądź ukrywa przycisk
+function toggleVisibility (element, showOrHide) {
     switch (showOrHide) {
         case 'show':
-            if (element.style.display === 'none') {
-                element.style.display === 'block';
-            }
+                element.style.display = 'block';
             break;
         case 'hide':
-            if (element.style.display === 'block') {
-                element.style.display === 'none';
-            }
+                element.style.display = 'none';
             break;
     }
 }
+
+
+operatingButton();
+
+//document.getElementById('RPS-textBox').textContent = "Aktualna faza:"+ Phase.ActivePhase
 
 /*
 ZAŁOŻENIA DLA NASZEJ APLIKACJI
