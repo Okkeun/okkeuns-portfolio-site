@@ -76,12 +76,7 @@ button a {
 }
 
 
-.RPSgame-screen {
-    width: 400px;
-    height: 400px;
-    background-color: #d1c517;
-    margin: auto;
-}
+
 
 #popup-rps-game.active, #popup-portfolio-warning.active{
     top: 40%;
@@ -94,6 +89,7 @@ button a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 
 #popup-rps-game .normal-btn {
@@ -272,6 +268,15 @@ main {
     max-height: 100px;
 }
 
+.untouchable-background {
+    z-index: 4;
+    opacity: 40%;
+    background-color: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 
 
 
@@ -351,7 +356,7 @@ main {
         text-align: right;
         margin-right: 2px;
     }
-    .nav-element {
+    .nav-element { /*big screen mode*/
         color: var(--text-color);
         padding: 10px 15px 10px 15px;
         margin: auto 0 auto 0;
@@ -542,6 +547,13 @@ main {
     }
     .about-the-author-section { /*small*/
         margin: 0 auto 0 auto;
+    }
+    .normal-btn {
+        color: var(--text-color);
+        padding: 10px 15px 10px 15px;
+        margin: 5px 0 5px 0;
+        border: 1px solid rgb(63, 63, 63);
+        border-image-slice: 1;
     }
 }
 

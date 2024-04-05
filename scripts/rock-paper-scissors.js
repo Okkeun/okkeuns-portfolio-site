@@ -16,9 +16,9 @@ function updateElement (HTMLElement, content) {
     HTMLElement.textContent = content;
 }
 
+//press button to start battle (phase Intro -> StandBy)
 function operatingButton () {
     document.getElementById('RPSbutton1').addEventListener("click", function() {
-        console.log(Phase.ActivePhase);
         //change phase
         Phase.ActivePhase = Phase.StandBy; 
         //update the textbox
@@ -33,10 +33,10 @@ function operatingButton () {
 function toggleVisibility (element, showOrHide) {
     switch (showOrHide) {
         case 'show':
-                element.style.display = 'block';
+            element.style.display = 'block';
             break;
         case 'hide':
-                element.style.display = 'none';
+            element.style.display = 'none';
             break;
     }
 }

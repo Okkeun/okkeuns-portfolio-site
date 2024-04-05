@@ -1,7 +1,16 @@
+
+
 .RPSgame-screen {
+    position: absolute;
+
+    width: clamp(100%, 350px, 450px);
+    height: 400px;
+    background-color: #d1c517;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 4;
 }
 
 #RPS-button1 {
