@@ -16,7 +16,7 @@
     z-index: 6;
 }
 
-#RPS-button1 {
+#RPS-button1, .RPS-any-button {
     margin: auto;
     z-index: 6;
     color: red;
@@ -27,7 +27,7 @@
     border-image-slice: 1;
 }
 
-#RPS-button1:hover {
+#RPS-button1:hover, .RPS-any-button {
     color: purple;
 }
 
@@ -42,8 +42,13 @@
 }
 
 #RPS-character-box {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     margin: auto;
     background-color: yellow;
+    filter: drop-shadow(2px 2px 12px red);
+}
+
+#RPS-RPSbuttons-3ofthem {
+    display: none;
 }

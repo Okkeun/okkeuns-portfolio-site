@@ -27,6 +27,8 @@ function operatingButton () {
         toggleVisibility(document.getElementById('RPS-button1'), 'hide');
         //DEBUG - change the colour of the charBox
         document.getElementById('RPS-character-box').style.backgroundColor = 'red';
+        //show RPS buttons
+        toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
     });
 }
 
