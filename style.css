@@ -81,6 +81,8 @@ button a {
 #popup-rps-game.active, #popup-portfolio-warning.active{
     top: 40%;
     left: 50%;
+    width: 600px;
+    height: 600px;
     transform: translate(-50%, -50%);
     visibility: visible;
     opacity: 1;

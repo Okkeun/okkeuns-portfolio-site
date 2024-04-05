@@ -2,17 +2,25 @@
 
 .RPSgame-screen {
     position: absolute;
-
-    width: clamp(100%, 350px, 450px);
+    width: 95%;
     height: 400px;
-    background-color: #d1c517;
+    background-color: #d1171733;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 4;
+    z-index: 5;
 }
 
 #RPS-button1 {
     margin: auto;
+}
+
+#popup-rps-game .normal-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: auto;
+    margin-bottom: 5px;
+    
 }
