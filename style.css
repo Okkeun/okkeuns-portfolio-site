@@ -82,21 +82,17 @@ button a {
     top: 40%;
     left: 50%;
     width: 600px;
-    height: 600px;
-    transform: translate(-50%, -50%);
+    height: 450px;
     visibility: visible;
     opacity: 1;
-    transition: 0.5s;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
     z-index: 3;
 }
 
-#popup-rps-game .normal-btn {
-    margin: auto;
-}
+
 
 #popup-portfolio-warning, #popup-rps-game{
     position: fixed;
