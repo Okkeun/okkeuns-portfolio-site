@@ -10,7 +10,7 @@ const Phase = {
 
 let sampleText = "Aktualna faza: "+ Phase.ActivePhase;
 let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
-let mainButton = document.getElementById('RPSbutton1');
+let mainButton = document.getElementById('RPS-button1');
 
 function updateElement (HTMLElement, content) {
     HTMLElement.textContent = content;
@@ -18,13 +18,13 @@ function updateElement (HTMLElement, content) {
 
 //press button to start battle (phase Intro -> StandBy)
 function operatingButton () {
-    document.getElementById('RPSbutton1').addEventListener("click", function() {
+    document.getElementById('RPS-button1').addEventListener("click", function() {
         //change phase
         Phase.ActivePhase = Phase.StandBy; 
         //update the textbox
         updateElement(document.getElementById('RPS-textBox'), "Aktualna faza: "+ Phase.ActivePhase);
         //hide the button
-        toggleVisibility(document.getElementById('RPSbutton1'), 'hide');
+        toggleVisibility(document.getElementById('RPS-button1'), 'hide');
     });
 }
 

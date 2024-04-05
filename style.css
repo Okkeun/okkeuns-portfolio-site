@@ -78,7 +78,7 @@ button a {
 
 
 
-#popup-rps-game.active, #popup-portfolio-warning.active{
+#popup-portfolio-warning.active{
     top: 40%;
     left: 50%;
     width: 600px;
@@ -90,7 +90,10 @@ button a {
     justify-content: baseline;
     align-items: center;
     z-index: 3;
+    background-color: white;
 }
+
+
 
 
 
@@ -102,7 +105,7 @@ button a {
     width: 600px;
     max-width: 50%;
     padding: 50px;
-    background: white;
+
     color: black;
     opacity: 0;
     z-index: 1;
@@ -110,7 +113,20 @@ button a {
     transition: 0.5s;
 }
 
-
+#popup-rps-game.active{
+    top: 40%;
+    left: 50%;
+    width: 450px;
+    height: 500px;
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    z-index: 3;
+    background-color: none;
+}
 
 
 
