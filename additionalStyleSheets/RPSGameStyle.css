@@ -36,6 +36,14 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 4;
     background-color: #ffffff;
     filter: drop-shadow(1px 1px red);
+}
+
+#RPS-character-box {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background-color: yellow;
 }

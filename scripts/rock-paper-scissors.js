@@ -25,6 +25,8 @@ function operatingButton () {
         updateElement(document.getElementById('RPS-textBox'), "Aktualna faza: "+ Phase.ActivePhase);
         //hide the button
         toggleVisibility(document.getElementById('RPS-button1'), 'hide');
+        //DEBUG - change the colour of the charBox
+        document.getElementById('RPS-character-box').style.backgroundColor = 'red';
     });
 }
 
