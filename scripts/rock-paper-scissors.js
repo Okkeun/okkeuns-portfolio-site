@@ -71,7 +71,7 @@ function timeToDecide() {
 
 }
 
-//pokazuje bądź ukrywa przycisk
+//shows or hide an element
 function toggleVisibility (element, showOrHide) {
     switch (showOrHide) {
         case 'show':
@@ -83,21 +83,27 @@ function toggleVisibility (element, showOrHide) {
     }
 }
 
+//when RPS button is clicked
+function pressButtonToChooseRPSFigure (figure) {
+    Status.ofPlayersFigure = figure; 
+    toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
+    toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
+    updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
+}
+
+
 function fightPhase() {
     //if player have to choose between 3 RPS buttons...
     if (Phase.ActivePhase = Phase.Fight) {
         document.getElementById('RPS-rock-btn').addEventListener('click', () => {
-            console.log(":DD");
+            //set the figure and hide the buttons
+            pressButtonToChooseRPSFigure('rock');
         });
-    }
-    if (Phase.ActivePhase = Phase.Fight) {
         document.getElementById('RPS-paper-btn').addEventListener('click', () => {
-            console.log(":DD");
+            pressButtonToChooseRPSFigure('paper');
         });
-    }
-    if (Phase.ActivePhase = Phase.Fight) {
         document.getElementById('RPS-scissors-btn').addEventListener('click', () => {
-            console.log(":DD");
+            pressButtonToChooseRPSFigure('scissors');
         });
     }
 }
