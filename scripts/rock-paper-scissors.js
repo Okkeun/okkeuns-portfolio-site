@@ -84,7 +84,22 @@ function toggleVisibility (element, showOrHide) {
 }
 
 function fightPhase() {
-
+    //if player have to choose between 3 RPS buttons...
+    if (Phase.ActivePhase = Phase.Fight) {
+        document.getElementById('RPS-rock-btn').addEventListener('click', () => {
+            console.log(":DD");
+        });
+    }
+    if (Phase.ActivePhase = Phase.Fight) {
+        document.getElementById('RPS-paper-btn').addEventListener('click', () => {
+            console.log(":DD");
+        });
+    }
+    if (Phase.ActivePhase = Phase.Fight) {
+        document.getElementById('RPS-scissors-btn').addEventListener('click', () => {
+            console.log(":DD");
+        });
+    }
 }
 
 
