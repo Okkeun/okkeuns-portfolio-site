@@ -35,7 +35,7 @@ function operatingButton () {
         //DEBUG - change the apparition of the charBox
         document.getElementById('RPS-character-box').style.backgroundImage = 'url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F37.media.tumblr.com%2F90737f921dc857c76f2443c5a423865b%2Ftumblr_n4t2z7jJNA1spy7ono1_400.gif&f=1&nofb=1&ipt=54381e23e7b89b5e8ed609085b17e820195072a5efa1d9801755b1dcf1ab3307&ipo=images)';
         //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
-        animationInterval = setInterval(enemysAnimationIntroCOUNTER, 1500);
+        animationInterval = setInterval(enemysAnimationIntroCOUNTER, 500);
         timeToDecide();
         toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
     });

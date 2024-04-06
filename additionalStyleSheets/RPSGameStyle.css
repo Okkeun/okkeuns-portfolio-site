@@ -53,4 +53,13 @@
 #RPS-RPSbuttons-3ofthem, #RPSPlaceholder1 {
     height: 25px;
     display: none;
+    
+}
+
+.WiPWarning {
+    position: fixed;
+    background-color: #ffffff;
+    color: red;
+    top: 0;
+    left: 0;
 }
