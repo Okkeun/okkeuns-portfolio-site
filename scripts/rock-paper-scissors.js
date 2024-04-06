@@ -12,6 +12,9 @@ const Status = {
     ofEnemysFigure: null,
 }
 
+let playersScore = 0;
+let enemysScore = 0;
+
 let counterFive = 5;
 let animationInterval = null;
 
@@ -82,7 +85,29 @@ function rndNum(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 
-function enemyChoosesTheFigure () {
+function theGreatComparision() {
+    //let's check every variant!
+    //let's focus on comparing PLAYER's figure to ENEMY's
+    switch (Status.ofPlayersFigure) {
+        case 'rock':
+            if (Status.ofEnemysFigure === 'rock') { console.log("DRAW!"); }
+            else if (Status.ofEnemysFigure === 'paper') { console.log('Nahh you lose... :<'); }
+            else if (Status.ofEnemysFigure === 'scissors') { console.log('You won!! :D'); }
+            break;
+        case 'paper':
+            if (Status.ofEnemysFigure === 'rock') { console.log('You won!! :D'); }
+            else if (Status.ofEnemysFigure === 'paper') { console.log("DRAW!"); }
+            else if (Status.ofEnemysFigure === 'scissors') { console.log('Nahh you lose... :<'); }
+            break;
+        case 'scissors':
+            if (Status.ofEnemysFigure === 'rock') { console.log('Nahh you lose... :<'); }
+            else if (Status.ofEnemysFigure === 'paper') { console.log('You won!! :D'); }
+            else if (Status.ofEnemysFigure === 'scissors') { console.log("DRAW!"); }
+            break;
+    }
+}
+
+function enemysTurn() {
     Status.ofEnemysFigure = rndNum(0, 3);
     
     //figure name converter: numbers to strings
@@ -98,6 +123,8 @@ function enemyChoosesTheFigure () {
             break;
     }
     console.log("Enemy's figure: "+Status.ofEnemysFigure);
+    //now we have both figures - time to compare them! :
+    theGreatComparision();
 }
 
 //when RPS button is clicked
@@ -108,7 +135,7 @@ function pressButtonToChooseRPSFigure (figure) {
     toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
     updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
     //it's time for the enemy to GENERATE the figure!
-    enemyChoosesTheFigure();
+    enemysTurn();
 }
 
 
