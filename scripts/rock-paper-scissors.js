@@ -65,11 +65,6 @@ function enemysAnimationIntroCOUNTER () {
         updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
     }
 }
-//FIGHT TIME! YOU HAVE 10 SECOUNDS TO DECIDE! 
-function timeToDecide() {
-        //show the buttons ...and hide the placeholder
-
-}
 
 //shows or hide an element
 function toggleVisibility (element, showOrHide) {
@@ -83,12 +78,37 @@ function toggleVisibility (element, showOrHide) {
     }
 }
 
+function rndNum(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+
+function enemyChoosesTheFigure () {
+    Status.ofEnemysFigure = rndNum(0, 3);
+    
+    //figure name converter: numbers to strings
+    switch (Status.ofEnemysFigure) {
+        case 0:
+            Status.ofEnemysFigure = 'rock';
+            break;
+        case 1:
+            Status.ofEnemysFigure = 'paper';
+            break;
+        case 2:
+            Status.ofEnemysFigure = 'scissors';
+            break;
+    }
+    console.log("Enemy's figure: "+Status.ofEnemysFigure);
+}
+
 //when RPS button is clicked
 function pressButtonToChooseRPSFigure (figure) {
+    //set the figure and hide the buttons
     Status.ofPlayersFigure = figure; 
     toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
     toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
     updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
+    //it's time for the enemy to GENERATE the figure!
+    enemyChoosesTheFigure();
 }
 
 
@@ -96,7 +116,6 @@ function fightPhase() {
     //if player have to choose between 3 RPS buttons...
     if (Phase.ActivePhase = Phase.Fight) {
         document.getElementById('RPS-rock-btn').addEventListener('click', () => {
-            //set the figure and hide the buttons
             pressButtonToChooseRPSFigure('rock');
         });
         document.getElementById('RPS-paper-btn').addEventListener('click', () => {
@@ -110,7 +129,6 @@ function fightPhase() {
 
 
 operatingButton();
-//timeToDecide();
 fightPhase();
 
 
