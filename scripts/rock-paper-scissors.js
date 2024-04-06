@@ -32,14 +32,12 @@ function operatingButton () {
         updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
         //hide the button
         toggleVisibility(document.getElementById('RPS-button1'), 'hide');
-        //DEBUG - change the colour of the charBox
-        document.getElementById('RPS-character-box').style.backgroundColor = 'green';
+        //DEBUG - change the apparition of the charBox
+        document.getElementById('RPS-character-box').style.backgroundImage = 'url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F37.media.tumblr.com%2F90737f921dc857c76f2443c5a423865b%2Ftumblr_n4t2z7jJNA1spy7ono1_400.gif&f=1&nofb=1&ipt=54381e23e7b89b5e8ed609085b17e820195072a5efa1d9801755b1dcf1ab3307&ipo=images)';
         //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
         animationInterval = setInterval(enemysAnimationIntroCOUNTER, 1500);
         timeToDecide();
         toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
-
-
     });
 }
 
@@ -59,9 +57,10 @@ function enemysAnimationIntroCOUNTER () {
         
         //stop the timer
         clearInterval(animationInterval);
-        console.log('WTF?');
+            //console.log('WTF?');
 
         //launch next phase: Fight Phase and display the appropiate text
+        document.getElementById('RPS-textBox2').textContent = 'Time to decide! :D';
         Phase.ActivePhase = Phase.Fight;
         updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
     }
@@ -71,7 +70,6 @@ function timeToDecide() {
         //show the buttons ...and hide the placeholder
 
 }
-
 
 //pokazuje bądź ukrywa przycisk
 function toggleVisibility (element, showOrHide) {
@@ -85,9 +83,15 @@ function toggleVisibility (element, showOrHide) {
     }
 }
 
+function fightPhase() {
+
+}
+
 
 operatingButton();
-timeToDecide();
+//timeToDecide();
+fightPhase();
+
 
 
 //document.getElementById('RPS-textBox').textContent = "Aktualna faza:"+ Phase.ActivePhase

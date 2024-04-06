@@ -71,6 +71,8 @@ button a {
 
 .container#blur.active {
     filter: blur(10px);
+    transition: 2.5s;
+    opacity: 0%;
     pointer-events: none;
     user-select: none;
 }
