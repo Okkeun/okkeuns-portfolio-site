@@ -13,6 +13,7 @@ const Status = {
 }
 
 let counterFive = 5;
+let animationInterval = null;
 
 let sampleText = "Aktualna faza: "+ Phase.ActivePhase;
 let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
@@ -28,28 +29,41 @@ function operatingButton () {
         //change phase
         Phase.ActivePhase = Phase.EnemysAnimationTime; 
         //update the textbox
-        updateElement(document.getElementById('RPS-textBox'), "Aktualna faza: "+ Phase.ActivePhase);
+        updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
         //hide the button
         toggleVisibility(document.getElementById('RPS-button1'), 'hide');
         //DEBUG - change the colour of the charBox
         document.getElementById('RPS-character-box').style.backgroundColor = 'green';
         //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
-        var animationInterval = setInterval(enemysAnimationIntroCOUNTER, 2500);
+        animationInterval = setInterval(enemysAnimationIntroCOUNTER, 1500);
         timeToDecide();
         toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
+
+
     });
 }
 
 //time for the animation (about 3 secs)
 function enemysAnimationIntroCOUNTER () {
     counterFive -= 1;
-    document.getElementById('RPS-textBox2').textContent = "Animation of enemy: "+ counterFive;
+    document.getElementById('RPS-textBox2').textContent = "Animation of enemy plays: "+ counterFive;
     console.log("Licznik: "+counterFive);
+    //if the animation will end...
     if (counterFive === 0){
-        console.log('Time to decide!');
+        
+        //show RPS buttons (and hide placeholder)
         toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
         toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
+        //DEBUG: change the box apparition
         document.getElementById('RPS-character-box').style.backgroundColor = 'red';
+        
+        //stop the timer
+        clearInterval(animationInterval);
+        console.log('WTF?');
+
+        //launch next phase: Fight Phase and display the appropiate text
+        Phase.ActivePhase = Phase.Fight;
+        updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
     }
 }
 //FIGHT TIME! YOU HAVE 10 SECOUNDS TO DECIDE! 
