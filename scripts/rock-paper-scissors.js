@@ -107,7 +107,8 @@ function theGreatComparision() {
     //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
     //toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
 
-
+    // there is a small cooldown to slow a game a bit
+    setTimeout(() => {
     switch (Status.ofPlayersFigure) {
         case 'rock':
             if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = drawText; }
@@ -126,14 +127,15 @@ function theGreatComparision() {
             break;
     }
     Phase.ActivePhase = Phase.Fight;
+    }, 1000);
     //cycle #2+n starts once again
     //show RPS buttons!
     setTimeout(() => {
         toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
-    }, 1000);
+    }, 3000);
     setTimeout(() => {
         toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
-    }, 1000);
+    }, 3000);
     //after short time, reactivate the RPS buttons event listeners
     
 }
