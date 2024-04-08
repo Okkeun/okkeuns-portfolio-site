@@ -111,18 +111,18 @@ function theGreatComparision() {
     setTimeout(() => {
     switch (Status.ofPlayersFigure) {
         case 'rock':
-            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = drawText; }
-            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = loseText; }
-            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = winText; }
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = drawText;}
+            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = loseText; updatePoints('enemy')}
+            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = winText;  updatePoints('you') }
             break;
         case 'paper':
-            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = winText; }
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = winText;  updatePoints('you') }
             else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = drawText; }
-            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = loseText;; }
+            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = loseText; updatePoints('enemy')}
             break;
         case 'scissors':
-            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = loseText; }
-            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = winText; }
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = loseText;  updatePoints('enemy') }
+            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = winText;  updatePoints('you') }
             else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = drawText; }
             break;
     }
@@ -197,6 +197,17 @@ function pressButtonToChooseRPSFigure (figure) {
     updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
     //it's time for the enemy to GENERATE the figure!
     enemysTurn();
+}
+
+function updatePoints (whoWon) {
+    if (whoWon === 'you') {
+        playersScore++;
+        document.getElementById('RPS-textBoxPointsYou').textContent = "You: "+playersScore;
+    }
+    else if (whoWon === 'enemy') {
+        enemysScore++;
+        document.getElementById('RPS-textBoxPointsEnemy').textContent = "Enemy: "+enemysScore;
+    }
 }
 
 
