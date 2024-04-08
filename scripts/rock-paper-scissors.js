@@ -96,7 +96,12 @@ function rndNum(min, max) {
 function theGreatComparision() {
     //let's check every variant!
     //let's focus on comparing PLAYER's figure to ENEMY's
+    
     Phase.ActivePhase = Phase.Resolve;
+
+
+    //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
+    //toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
     switch (Status.ofPlayersFigure) {
         case 'rock':
             if (Status.ofEnemysFigure === 'rock') { console.log("DRAW!"); }
@@ -117,8 +122,12 @@ function theGreatComparision() {
     Phase.ActivePhase = Phase.Fight;
     //cycle #2+n starts once again
     //show RPS buttons!
-    setTimeout(toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide'), 10000);
-    setTimeout(toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show'), 10000);
+    setTimeout(() => {
+        toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
+    }, 1000);
+    setTimeout(() => {
+        toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
+    }, 1000);
     //after short time, reactivate the RPS buttons event listeners
     
 }
@@ -126,6 +135,10 @@ function theGreatComparision() {
 function enemysTurn() {
     Status.ofEnemysFigure = rndNum(0, 3);
     
+    //hide RPS buttons
+    toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
+    toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
+
     //figure name converter: numbers to strings
     switch (Status.ofEnemysFigure) {
         case 0:
