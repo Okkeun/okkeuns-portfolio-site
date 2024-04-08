@@ -4,7 +4,8 @@ const Phase = {
     Intro: -1, //greetings
     EnemysAnimationTime: 0, //time for the animation to play, quickly moves to the next phase
     Fight: 1, //you have 5 seconds to make a decision
-    Resolve: 2
+    Resolve: 2,
+    StandBy: 3
 }
 
 const Status = {
@@ -18,9 +19,11 @@ let enemysScore = 0;
 let counterFive = 5;
 let animationInterval = null;
 
-let sampleText = "Aktualna faza: "+ Phase.ActivePhase;
+let sampleText = "Current phase: "+ Phase.ActivePhase;
 let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
 let mainButton = document.getElementById('RPS-button1');
+
+operatingButton();
 
 function updateElement (HTMLElement, content) {
     HTMLElement.textContent = content;
@@ -39,12 +42,16 @@ function operatingButton () {
         document.getElementById('RPS-character-box').style.backgroundImage = 'url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F37.media.tumblr.com%2F90737f921dc857c76f2443c5a423865b%2Ftumblr_n4t2z7jJNA1spy7ono1_400.gif&f=1&nofb=1&ipt=54381e23e7b89b5e8ed609085b17e820195072a5efa1d9801755b1dcf1ab3307&ipo=images)';
         //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
         animationInterval = setInterval(enemysAnimationIntroCOUNTER, 500);
-        timeToDecide();
-        toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
+        //timeToDecide();
+        //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
+
+        //this function have event listeners for RPS buttons
+        fightPhase();
+    
     });
 }
 
-//time for the animation (about 3 secs)
+//time for the animation (about 3 secs) [ function induced in operatingButton() interval but showing only ONCE!!!] 
 function enemysAnimationIntroCOUNTER () {
     counterFive -= 1;
     document.getElementById('RPS-textBox2').textContent = "Animation of enemy plays: "+ counterFive;
@@ -66,6 +73,7 @@ function enemysAnimationIntroCOUNTER () {
         document.getElementById('RPS-textBox2').textContent = 'Time to decide! :D';
         Phase.ActivePhase = Phase.Fight;
         updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
+        console.log('Current phase: '+Phase.ActivePhase);
     }
 }
 
@@ -88,6 +96,7 @@ function rndNum(min, max) {
 function theGreatComparision() {
     //let's check every variant!
     //let's focus on comparing PLAYER's figure to ENEMY's
+    Phase.ActivePhase = Phase.Resolve;
     switch (Status.ofPlayersFigure) {
         case 'rock':
             if (Status.ofEnemysFigure === 'rock') { console.log("DRAW!"); }
@@ -105,6 +114,13 @@ function theGreatComparision() {
             else if (Status.ofEnemysFigure === 'scissors') { console.log("DRAW!"); }
             break;
     }
+    Phase.ActivePhase = Phase.Fight;
+    //cycle #2+n starts once again
+    //show RPS buttons!
+    setTimeout(toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide'), 10000);
+    setTimeout(toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show'), 10000);
+    //after short time, reactivate the RPS buttons event listeners
+    
 }
 
 function enemysTurn() {
@@ -127,22 +143,21 @@ function enemysTurn() {
     theGreatComparision();
 }
 
-//when RPS button is clicked
-function pressButtonToChooseRPSFigure (figure) {
-    //set the figure and hide the buttons
-    Status.ofPlayersFigure = figure; 
-    toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
-    toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
-    updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
-    //it's time for the enemy to GENERATE the figure!
-    enemysTurn();
-}
+
 
 
 function fightPhase() {
+
     //if player have to choose between 3 RPS buttons...
-    if (Phase.ActivePhase = Phase.Fight) {
+    console.log("fight phase?");
+   // if (Phase.ActivePhase === Phase.Fight) {
+        //reset the counter
+        //counterFive = 5;
+        //show RPS buttons
+        //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
+        //toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
         document.getElementById('RPS-rock-btn').addEventListener('click', () => {
+            console.log("fight phase? rock");
             pressButtonToChooseRPSFigure('rock');
         });
         document.getElementById('RPS-paper-btn').addEventListener('click', () => {
@@ -151,12 +166,20 @@ function fightPhase() {
         document.getElementById('RPS-scissors-btn').addEventListener('click', () => {
             pressButtonToChooseRPSFigure('scissors');
         });
-    }
+    //}
+}
+
+//when RPS button is clicked
+function pressButtonToChooseRPSFigure (figure) {
+    //set the figure and hide the buttons
+    Status.ofPlayersFigure = figure; 
+    updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
+    //it's time for the enemy to GENERATE the figure!
+    enemysTurn();
 }
 
 
-operatingButton();
-fightPhase();
+
 
 
 
