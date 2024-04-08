@@ -23,6 +23,10 @@ let sampleText = "Current phase: "+ Phase.ActivePhase;
 let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
 let mainButton = document.getElementById('RPS-button1');
 
+let winText = "Congrats! You won the match! :D";
+let loseText = "Naah, you lost the match :<";
+let drawText = "It's a draw, no one wins this match! :b";
+
 operatingButton();
 
 function updateElement (HTMLElement, content) {
@@ -102,21 +106,23 @@ function theGreatComparision() {
 
     //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
     //toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
+
+
     switch (Status.ofPlayersFigure) {
         case 'rock':
-            if (Status.ofEnemysFigure === 'rock') { console.log("DRAW!"); }
-            else if (Status.ofEnemysFigure === 'paper') { console.log('Nahh you lose... :<'); }
-            else if (Status.ofEnemysFigure === 'scissors') { console.log('You won!! :D'); }
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = drawText; }
+            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = loseText; }
+            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = winText; }
             break;
         case 'paper':
-            if (Status.ofEnemysFigure === 'rock') { console.log('You won!! :D'); }
-            else if (Status.ofEnemysFigure === 'paper') { console.log("DRAW!"); }
-            else if (Status.ofEnemysFigure === 'scissors') { console.log('Nahh you lose... :<'); }
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = winText; }
+            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = drawText; }
+            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = loseText;; }
             break;
         case 'scissors':
-            if (Status.ofEnemysFigure === 'rock') { console.log('Nahh you lose... :<'); }
-            else if (Status.ofEnemysFigure === 'paper') { console.log('You won!! :D'); }
-            else if (Status.ofEnemysFigure === 'scissors') { console.log("DRAW!"); }
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = loseText; }
+            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = winText; }
+            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = drawText; }
             break;
     }
     Phase.ActivePhase = Phase.Fight;

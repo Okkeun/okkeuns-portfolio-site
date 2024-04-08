@@ -63,3 +63,14 @@
     top: 0;
     left: 0;
 }
+
+.RPS-textBox {
+    margin: 5px auto 5px auto; 
+}
+
+#RPS-textBox3 {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: purple;
+}
