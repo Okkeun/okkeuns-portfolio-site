@@ -50,8 +50,6 @@ function operatingButton () {
         document.getElementById('RPS-character-box').style.backgroundImage = 'url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F37.media.tumblr.com%2F90737f921dc857c76f2443c5a423865b%2Ftumblr_n4t2z7jJNA1spy7ono1_400.gif&f=1&nofb=1&ipt=54381e23e7b89b5e8ed609085b17e820195072a5efa1d9801755b1dcf1ab3307&ipo=images)';
         //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
         animationInterval = setInterval(enemysAnimationIntroCOUNTER, 100);
-        //timeToDecide();
-        //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
 
         //this function have event listeners for RPS buttons
         fightPhase();
@@ -118,13 +116,15 @@ function theGreatComparision() {
             break;
         case 'paper':
             if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = winText;  updatePoints('you') }
-            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = drawText; }
+            else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = drawText; 
+            document.getElementById('RPS-character-box-IMG').src = drawImg}
             else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = loseText; updatePoints('enemy')}
             break;
         case 'scissors':
             if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = loseText;  updatePoints('enemy') }
             else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = winText;  updatePoints('you') }
-            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = drawText; }
+            else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = drawText; 
+            document.getElementById('RPS-character-box-IMG').src = drawImg}
             break;
     }
     Phase.ActivePhase = Phase.Fight;
@@ -163,7 +163,6 @@ function enemysTurn() {
             Status.ofEnemysFigure = 'scissors';
             break;
     }
-    console.log("Enemy's figure: "+Status.ofEnemysFigure);
     //now we have both figures - time to compare them! :
     theGreatComparision();
 }
@@ -192,7 +191,7 @@ function fightPhase() {
 function pressButtonToChooseRPSFigure (figure) {
     //set the figure and hide the buttons
     Status.ofPlayersFigure = figure; 
-    updateElement(document.getElementById('RPS-textBox2'), "Player's figure: "+figure);
+    updateElement(document.getElementById('RPS-textBox2'));
     //it's time for the enemy to GENERATE the figure!
     enemysTurn();
 }
