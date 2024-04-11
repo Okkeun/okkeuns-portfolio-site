@@ -17,23 +17,34 @@
         <div class="RPSgame-screen">
             <p class="RPS-textBox" id="RPS-textBox"></p>
             <p class="RPS-textBox" id="RPS-textBox2">---</p>
-            <p class="RPS-textBox" id="RPS-textBox3">---</p>
 
+            <div class="RPS-multi-elements-horizontal">
+                <div></div>
+                <img class="RPS-image" id="RPS-img-enemy-figure" alt="">
+                <div id="RPS-enemy-score" style="min-width: 50px"><p class="RPS-textBox" id="RPS-textBoxPointsEnemy">Enemy: 0</p></div>
+            </div>
+            
+            <p class="RPS-textBox" id="RPS-textBox3">---</p>
             <div id="RPS-character-box"></div>
-            <h4 class="RPS-textBox" id="RPS-textBox4">Points</h4>
-            <p class="RPS-textBox" id="RPS-textBoxPointsYou">You: 0</p>
-            <p class="RPS-textBox" id="RPS-textBoxPointsEnemy">Enemy: 0</p>
+
+            <div class="RPS-multi-elements-horizontal">
+                <div id="RPS-player-score" style="min-width: 50px"><p class="RPS-textBox" id="RPS-textBoxPointsYou">You: 0</p></div>
+                <img class="RPS-image" id="RPS-img-player-figure" alt="">
+                <div></div>
+            </div>
+            
+            
             <div id="RPS-RPSbuttons-3ofthem">
-                <button class="normal-btn RPS-any-button" id="RPS-rock-btn">Rock</button>
-                <button class="normal-btn RPS-any-button" id="RPS-paper-btn">Paper</button>
-                <button class="normal-btn RPS-any-button" id="RPS-scissors-btn">Scissors</button>
+                <button class="normal-btn RPS-any-button" id="RPS-rock-btn">🪨 Rock</button>
+                <button class="normal-btn RPS-any-button" id="RPS-paper-btn">🗞️ Paper</button>
+                <button class="normal-btn RPS-any-button" id="RPS-scissors-btn">✂️ Scissors</button>
             </div>
             <div id="RPSPlaceholder1"></div>
             <button class="normal-btn" id="RPS-button1">START BATTLE!</button>
             
         </div>
         <button id="RPS-take-me-backBTN" class="normal-btn"><a href="#" onclick="toggleRpsGame()" style="color: black;" >🦚 nah take me back</a></button>
-        <p class="WiPWarning">Warning: Game is currently in development stage, sorry for inconvenience!</p>
+        
         <div class="untouchable-background"></div>
     </div><br>
 

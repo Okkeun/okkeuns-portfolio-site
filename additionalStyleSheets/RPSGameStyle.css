@@ -4,8 +4,7 @@
     position: absolute;
     margin: auto;
     width: 450px;
-    height: 450px;
-    background-color: #ffffff;
+    background-color: #ffffff77;
     border-radius: 1%;
     filter: drop-shadow(1px 1px gray);
     margin: auto;
@@ -22,7 +21,7 @@
     color: red;
     background-color: #ffffff;
     filter: drop-shadow(1px 1px red);
-    margin: 15px 0 15px 0;
+    margin: 5px 0 5px 0;
     /*border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); */
     border-image-slice: 1;
 }
@@ -34,7 +33,7 @@
 
 #RPS-take-me-backBTN {
     position: fixed;
-    bottom: 0;
+    bottom: -100px;
     right: 0;
     z-index: 4;
     background-color: #ffffff;
@@ -42,12 +41,21 @@
 }
 
 #RPS-character-box {
-    width: 250px;
-    height: 250px;
+    width: 450px;
+    min-height: 150px;
+    max-height: 150px;
+    margin: 5px auto 15px auto;
+    transition: 1s;
+    background-color: yellow;
+}
+
+.RPS-image {
+    max-height: 150px;
+    min-width: 100%;
     margin: auto;
     transition: 1s;
     background-color: yellow;
-    filter: drop-shadow(2px 2px 12px red);
+    box-shadow: 3px 3px 0px #ffd000, -3px -3px 0px #000000;
 }
 
 #RPS-RPSbuttons-3ofthem, #RPSPlaceholder1 {
@@ -68,9 +76,40 @@
     margin: 5px auto 5px auto; 
 }
 
-#RPS-textBox3 {
+#RPS-textBox3 { 
+    /*header*/
     font-weight: 700;
+    margin: 5px 0 5px 0;
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: purple;
+}
+
+.RPS-multi-elements-horizontal {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.RPS-multi-elements-horizontal div{
+    background-color: rgba(255, 255, 255, 0);
+    margin: 5px 0 5px 0;
+    min-width: 80px;
+    max-height: 100%;
+    flex-grow: 1;
+    flex-basis: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.RPS-multi-elements-horizontal img {
+    background-color: rgba(255, 255, 255, 0);
+    margin: 5px 0 5px 0;
+    min-width: 80px;
+    max-height: 100%;
+    flex-basis: 80px;
+    flex-grow: 1
 }

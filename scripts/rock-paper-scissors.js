@@ -19,13 +19,17 @@ let enemysScore = 0;
 let counterFive = 5;
 let animationInterval = null;
 
-let sampleText = "Current phase: "+ Phase.ActivePhase;
-let textBox = document.getElementById('RPS-textBox').textContent = sampleText;
 let mainButton = document.getElementById('RPS-button1');
 
 let winText = "Congrats! You won the match! :D";
 let loseText = "Naah, you lost the match :<";
 let drawText = "It's a draw, no one wins this match! :b";
+
+let rockImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fde%2F07%2F89%2Fde0789191986892a5bd4b3c36574880a.jpg&f=1&nofb=1&ipt=8c33f002beeccf5113d70f72deb7bd5453a21efeca8451890bb44409230fd9e1&ipo=images';
+let paperImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thatsnotus.com%2Fg%2F005-spongebob-writing-essay-1400x1050.jpg&f=1&nofb=1&ipt=cf3de6ac0037dba6b97445b81bd182ef8ea10e976df5db1de0c439c4230d0b77&ipo=images';
+let scissorsImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf6yT-ArUF-8uB98H2oHPb3WaitC0dZ3cGO5cyShICCg&s';
+
+let rockImgEnemy = '';
 
 operatingButton();
 
@@ -38,14 +42,12 @@ function operatingButton () {
     document.getElementById('RPS-button1').addEventListener("click", function() {
         //change phase
         Phase.ActivePhase = Phase.EnemysAnimationTime; 
-        //update the textbox
-        updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
         //hide the button
         toggleVisibility(document.getElementById('RPS-button1'), 'hide');
         //DEBUG - change the apparition of the charBox
         document.getElementById('RPS-character-box').style.backgroundImage = 'url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F37.media.tumblr.com%2F90737f921dc857c76f2443c5a423865b%2Ftumblr_n4t2z7jJNA1spy7ono1_400.gif&f=1&nofb=1&ipt=54381e23e7b89b5e8ed609085b17e820195072a5efa1d9801755b1dcf1ab3307&ipo=images)';
         //START OF PHASE 0 OF ANIMATION OF ENEMY - prepare an interval to buttons appear ~ 5 sec.
-        animationInterval = setInterval(enemysAnimationIntroCOUNTER, 500);
+        animationInterval = setInterval(enemysAnimationIntroCOUNTER, 100);
         //timeToDecide();
         //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
 
@@ -76,8 +78,6 @@ function enemysAnimationIntroCOUNTER () {
         //launch next phase: Fight Phase and display the appropiate text
         document.getElementById('RPS-textBox2').textContent = 'Time to decide! :D';
         Phase.ActivePhase = Phase.Fight;
-        updateElement(document.getElementById('RPS-textBox'), "Current phase "+ Phase.ActivePhase);
-        console.log('Current phase: '+Phase.ActivePhase);
     }
 }
 
@@ -150,12 +150,15 @@ function enemysTurn() {
     //figure name converter: numbers to strings
     switch (Status.ofEnemysFigure) {
         case 0:
+            document.getElementById('RPS-img-enemy-figure').src = rockImg; //change player's figure img
             Status.ofEnemysFigure = 'rock';
             break;
         case 1:
+            document.getElementById('RPS-img-enemy-figure').src = paperImg; //change player's figure img
             Status.ofEnemysFigure = 'paper';
             break;
         case 2:
+            document.getElementById('RPS-img-enemy-figure').src = scissorsImg; //change player's figure img
             Status.ofEnemysFigure = 'scissors';
             break;
     }
@@ -169,22 +172,16 @@ function enemysTurn() {
 
 function fightPhase() {
 
-    //if player have to choose between 3 RPS buttons...
-    console.log("fight phase?");
-   // if (Phase.ActivePhase === Phase.Fight) {
-        //reset the counter
-        //counterFive = 5;
-        //show RPS buttons
-        //toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
-        //toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
         document.getElementById('RPS-rock-btn').addEventListener('click', () => {
-            console.log("fight phase? rock");
+            document.getElementById('RPS-img-player-figure').src = rockImg; //change player's figure img
             pressButtonToChooseRPSFigure('rock');
         });
         document.getElementById('RPS-paper-btn').addEventListener('click', () => {
+            document.getElementById('RPS-img-player-figure').src = paperImg; //change player's figure img
             pressButtonToChooseRPSFigure('paper');
         });
         document.getElementById('RPS-scissors-btn').addEventListener('click', () => {
+            document.getElementById('RPS-img-player-figure').src = scissorsImg; //change player's figure img
             pressButtonToChooseRPSFigure('scissors');
         });
     //}

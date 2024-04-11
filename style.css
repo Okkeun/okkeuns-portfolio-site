@@ -115,7 +115,7 @@ button a {
 }
 
 #popup-rps-game.active{
-    top: 40%;
+    top: 30%;
     left: 50%;
     width: 450px;
     height: 500px;
