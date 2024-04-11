@@ -4,7 +4,7 @@
     position: absolute;
     margin: auto;
     width: 450px;
-    background-color: #ffffff77;
+    background-color: #ffffff;
     border-radius: 1%;
     filter: drop-shadow(1px 1px gray);
     margin: auto;
@@ -46,7 +46,13 @@
     max-height: 150px;
     margin: 5px auto 15px auto;
     transition: 1s;
-    background-color: yellow;
+    overflow: hidden;
+}
+
+#RPS-character-box img {
+    max-height:100%; 
+    max-width:100%;
+    overflow: hidden;
 }
 
 .RPS-image {
@@ -54,7 +60,6 @@
     min-width: 100%;
     margin: auto;
     transition: 1s;
-    background-color: yellow;
     box-shadow: 3px 3px 0px #ffd000, -3px -3px 0px #000000;
 }
 
@@ -96,6 +101,7 @@
 
 .RPS-multi-elements-horizontal div{
     background-color: rgba(255, 255, 255, 0);
+    padding: 10px 10px 10px 10px;
     margin: 5px 0 5px 0;
     min-width: 80px;
     max-height: 100%;
@@ -112,4 +118,8 @@
     max-height: 100%;
     flex-basis: 80px;
     flex-grow: 1
+}
+
+#RPS-enemy-score, #RPS-player-score {
+    background-color: rgba(255, 255, 255, 0);
 }

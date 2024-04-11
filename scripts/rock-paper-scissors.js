@@ -29,7 +29,9 @@ let rockImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pin
 let paperImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thatsnotus.com%2Fg%2F005-spongebob-writing-essay-1400x1050.jpg&f=1&nofb=1&ipt=cf3de6ac0037dba6b97445b81bd182ef8ea10e976df5db1de0c439c4230d0b77&ipo=images';
 let scissorsImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf6yT-ArUF-8uB98H2oHPb3WaitC0dZ3cGO5cyShICCg&s';
 
-let rockImgEnemy = '';
+let winImg = 'https://data.textstudio.com/output/sample/animated/5/9/8/5/win-21-5895.gif';
+let loseImg = 'https://i.pinimg.com/originals/ed/58/d3/ed58d31cdfb5b5da28ff06a11cf860d6.gif';
+let drawImg = 'https://i.pinimg.com/originals/c6/75/d3/c675d33f8e147f943a503a5895761a3e.gif';
 
 operatingButton();
 
@@ -60,8 +62,6 @@ function operatingButton () {
 //time for the animation (about 3 secs) [ function induced in operatingButton() interval but showing only ONCE!!!] 
 function enemysAnimationIntroCOUNTER () {
     counterFive -= 1;
-    document.getElementById('RPS-textBox2').textContent = "Animation of enemy plays: "+ counterFive;
-    console.log("Licznik: "+counterFive);
     //if the animation will end...
     if (counterFive === 0){
         
@@ -69,7 +69,6 @@ function enemysAnimationIntroCOUNTER () {
         toggleVisibility(document.getElementById('RPSPlaceholder1'), 'hide');
         toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'show');
         //DEBUG: change the box apparition
-        document.getElementById('RPS-character-box').style.backgroundColor = 'red';
         
         //stop the timer
         clearInterval(animationInterval);
@@ -111,7 +110,9 @@ function theGreatComparision() {
     setTimeout(() => {
     switch (Status.ofPlayersFigure) {
         case 'rock':
-            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = drawText;}
+            if (Status.ofEnemysFigure === 'rock') { document.getElementById('RPS-textBox3').textContent = drawText;
+            document.getElementById('RPS-character-box-IMG').src = drawImg;
+        }
             else if (Status.ofEnemysFigure === 'paper') { document.getElementById('RPS-textBox3').textContent = loseText; updatePoints('enemy')}
             else if (Status.ofEnemysFigure === 'scissors') { document.getElementById('RPS-textBox3').textContent = winText;  updatePoints('you') }
             break;
@@ -197,13 +198,17 @@ function pressButtonToChooseRPSFigure (figure) {
 }
 
 function updatePoints (whoWon) {
+    
     if (whoWon === 'you') {
         playersScore++;
         document.getElementById('RPS-textBoxPointsYou').textContent = "You: "+playersScore;
+        document.getElementById('RPS-character-box-IMG').src = winImg;
+        document.getElementById('RPS-character-box').style.backgroundImage = 'none';
     }
     else if (whoWon === 'enemy') {
         enemysScore++;
         document.getElementById('RPS-textBoxPointsEnemy').textContent = "Enemy: "+enemysScore;
+        document.getElementById('RPS-character-box-IMG').src = loseImg;
     }
 }
 
