@@ -229,8 +229,8 @@ main {
 }
 
 .ideas-container {
-    padding: 10px 0 10px 0;
-    margin: -80px 0 15px 0;
+    padding: 30px 0 10px 0;
+    margin: 10x 0 15px 0;
 
     width: 100%;
     text-align: center;
@@ -241,7 +241,7 @@ main {
 }
 
 
-.copyright {
+#copyright {
     /*background: var(--main-container-color);
     background: url(graphics/mountains-big.jpg); */
     border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 0.895), rgba(0, 0, 255, 0)); 
@@ -251,7 +251,7 @@ main {
     margin: auto;
 }
 
-.copyright p {
+#copyright p {
     margin: 0;
 }
 
@@ -293,8 +293,13 @@ main {
     height: 100vh;
 }
 
+.content-grid {
+    text-align: center;
+}
 
-
+.contact {
+    text-align: center;
+}
 
 
 
