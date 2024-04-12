@@ -33,6 +33,8 @@ let winImg = 'https://data.textstudio.com/output/sample/animated/5/9/8/5/win-21-
 let loseImg = 'https://i.pinimg.com/originals/ed/58/d3/ed58d31cdfb5b5da28ff06a11cf860d6.gif';
 let drawImg = 'https://i.pinimg.com/originals/c6/75/d3/c675d33f8e147f943a503a5895761a3e.gif';
 
+let kittyImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F37.media.tumblr.com%2F90737f921dc857c76f2443c5a423865b%2Ftumblr_n4t2z7jJNA1spy7ono1_400.gif&f=1&nofb=1&ipt=54381e23e7b89b5e8ed609085b17e820195072a5efa1d9801755b1dcf1ab3307&ipo=images';
+
 operatingButton();
 
 function updateElement (HTMLElement, content) {
@@ -148,23 +150,25 @@ function enemysTurn() {
     toggleVisibility(document.getElementById('RPSPlaceholder1'), 'show');
     toggleVisibility(document.getElementById('RPS-RPSbuttons-3ofthem'), 'hide');
 
-    //figure name converter: numbers to strings
-    switch (Status.ofEnemysFigure) {
-        case 0:
-            document.getElementById('RPS-img-enemy-figure').src = rockImg; //change player's figure img
-            Status.ofEnemysFigure = 'rock';
-            break;
-        case 1:
-            document.getElementById('RPS-img-enemy-figure').src = paperImg; //change player's figure img
-            Status.ofEnemysFigure = 'paper';
-            break;
-        case 2:
-            document.getElementById('RPS-img-enemy-figure').src = scissorsImg; //change player's figure img
-            Status.ofEnemysFigure = 'scissors';
-            break;
-    }
-    //now we have both figures - time to compare them! :
-    theGreatComparision();
+    //figure name converter: numbers to strings - after a little time
+    setTimeout(() => {
+            switch (Status.ofEnemysFigure) {
+                case 0:
+                    document.getElementById('RPS-img-enemy-figure').src = rockImg; //change player's figure img
+                    Status.ofEnemysFigure = 'rock';
+                    break;
+                case 1:
+                    document.getElementById('RPS-img-enemy-figure').src = paperImg; //change player's figure img
+                    Status.ofEnemysFigure = 'paper';
+                    break;
+                case 2:
+                    document.getElementById('RPS-img-enemy-figure').src = scissorsImg; //change player's figure img
+                    Status.ofEnemysFigure = 'scissors';
+                    break;
+            }
+            //now we have both figures - time to compare them! :
+            theGreatComparision();
+    }, 2000);
 }
 
 
@@ -191,7 +195,17 @@ function fightPhase() {
 function pressButtonToChooseRPSFigure (figure) {
     //set the figure and hide the buttons
     Status.ofPlayersFigure = figure; 
-    updateElement(document.getElementById('RPS-textBox2'));
+    //updateElement(document.getElementById('RPS-textBox2'));
+
+    //reset the figure filters
+    document.getElementById('RPS-img-enemy-figure').classList.remove('activate-red-filter');
+    document.getElementById('RPS-img-player-figure').classList.remove('activate-red-filter');
+
+    //hide the previous enemy's figure img and text
+    document.getElementById('RPS-img-enemy-figure').src = "";
+    document.getElementById('RPS-character-box-IMG').src = kittyImg;
+    document.getElementById('RPS-textBox3').textContent = "";
+
     //it's time for the enemy to GENERATE the figure!
     enemysTurn();
 }
@@ -203,11 +217,14 @@ function updatePoints (whoWon) {
         document.getElementById('RPS-textBoxPointsYou').textContent = "You: "+playersScore;
         document.getElementById('RPS-character-box-IMG').src = winImg;
         document.getElementById('RPS-character-box').style.backgroundImage = 'none';
+        //set a red filter to enemy
+        document.getElementById('RPS-img-enemy-figure').classList.add('activate-red-filter');
     }
     else if (whoWon === 'enemy') {
         enemysScore++;
         document.getElementById('RPS-textBoxPointsEnemy').textContent = "Enemy: "+enemysScore;
         document.getElementById('RPS-character-box-IMG').src = loseImg;
+        document.getElementById('RPS-img-player-figure').classList.add('activate-red-filter');
     }
 }
 
