@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
 @keyframes up-down {
     0% {transform: translateY(0);}
     50% {transform: translateY(-10px);}
@@ -334,6 +335,39 @@ main {
     color: rgb(4, 128, 0);
 }
 
+.flex-box-buttons-social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 30px;
+}
+
+.flex-box-buttons-social-media button {
+    text-align: center;
+    min-width: 140px;
+    flex: 0 0 50px;
+}
+.content-btn { 
+    color: var(--text-color);
+    
+    padding: 5px 10px 5px 10px;
+    margin: auto 0 auto 0;
+    border: 2px solid; border-image: linear-gradient(to bottom, rgba(1, 255, 255, 1), rgba(0, 234, 255, 0.455)); 
+    border-image-slice: 1;
+}
+.content-btn a {
+    color: white;
+}
+
+.linkedin-btn {
+    background-color: #0e98cf59;
+}
+.github-btn {
+    background-color: #13121288;
+}
+
 
 
 
@@ -425,7 +459,7 @@ main {
         border: 1px solid rgb(63, 63, 63);
         border-image-slice: 1;
     }
-
+    
 
     #cool-background {
         position: fixed;
