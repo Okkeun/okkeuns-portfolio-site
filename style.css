@@ -228,7 +228,7 @@ header {
     font-family: "Ferrum", Arial, Helvetica, sans-serif;
     font-size: 46px;
     margin: 0 auto 5px 0;
-    filter: drop-shadow(0px 0px 5px rgb(7, 182, 130, 1) );
+    /*filter: drop-shadow(0px 0px 5px rgb(7, 182, 130, 1) );*/
 }
 
 main {
@@ -366,6 +366,13 @@ main {
 }
 .github-btn {
     background-color: #13121288;
+}
+
+ul {
+    background-color: #202022;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid
 }
 
 
