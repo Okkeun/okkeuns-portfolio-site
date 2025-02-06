@@ -497,8 +497,8 @@ ul {
     
     }
     #mascot-container img {
-        max-height: 150%;
-        height: 150%;
+        max-height: 125%;
+        height: 125%;
         filter: drop-shadow(0px 0px 5px #4e1b91); 
         transition: filter 0.5s ease-in-out;
         animation: up-down 8s infinite;
